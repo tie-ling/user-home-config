@@ -14,8 +14,8 @@
   <property name="zoomStep" value="20"/>
   <property name="zoomStepScroll" value="2"/>
   <property name="displayDpi" value="71"/>
-  <property name="mainWndWidth" value="1276"/>
-  <property name="mainWndHeight" value="693"/>
+  <property name="mainWndWidth" value="1920"/>
+  <property name="mainWndHeight" value="1179"/>
   <property name="maximized" value="false"/>
   <property name="showToolbar" value="false"/>
   <property name="showSidebar" value="false"/>
@@ -160,6 +160,12 @@
       <attribute name="device" type="string" value=""/>
       <attribute name="disableDrawing" type="boolean" value="false"/>
       <attribute name="tool" type="string" value="none"/>
+    </data>
+  </data>
+  <data name="deviceClasses">
+    <data name="Wayland Pointer">
+      <attribute name="deviceClass" type="int" value="1"/>
+      <attribute name="deviceSource" type="int" value="0"/>
     </data>
   </data>
   <data name="tools">
