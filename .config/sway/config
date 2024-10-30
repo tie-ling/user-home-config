@@ -8,6 +8,8 @@ include /etc/sway/config
 
 workspace_layout tabbed
 
+seat "*" xcursor_theme Adwaita 32
+
 ### Idle configuration
 #
 # Example configuration:
