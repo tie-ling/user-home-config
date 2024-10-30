@@ -60,3 +60,9 @@ for_window [app_id="^.*"] inhibit_idle fullscreen
 include /etc/sway/config.d/*
 
 input type:touch events disabled
+
+# clamshell mode
+bindswitch --locked lid:on output eDP-1 disable
+bindswitch --locked lid:off output eDP-1 enable
+
+output DP-9 scale 2
