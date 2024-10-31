@@ -5,20 +5,20 @@
 # the sway-xkb module with the xkb module.
 
 # fonts we'll be re-using here and there
-awesome: &awesome Font Awesome 6 Free:style=solid:pixelsize=14
-awesome_brands: &awesome_brands Font Awesome 6 Brands:pixelsize=16
+awesome: &awesome Font Awesome 6 Free:style=solid:pixelsize=30
+awesome_brands: &awesome_brands Font Awesome 6 Brands:pixelsize=30
 
 std_underline: &std_underline {underline: { size: 2, color: ff0000ff}}
 
 # This is THE bar configuration
 bar:
-  height: 26
+  height: 50
   location: bottom
-  spacing: 10
-  margin: 10
+  spacing: 20
+  margin: 20
 
   # Default font
-  font: Free Sans:pixelsize=12
+  font: Free Sans:size=25
 
   foreground: ffffffff
   background: 111111cc
@@ -48,10 +48,10 @@ bar:
           - map: &i3_mode
               default:
                 - string:
-                    margin: 5
+                    margin: 10
                     text: "{mode}"
                     deco: {background: {color: cc421dff}}
-                - empty: {right-margin: 7}
+                - empty: {right-margin: 15}
               conditions:
                 mode == default: {empty: {}}
         content:
@@ -131,7 +131,7 @@ bar:
 
         content:
           map:
-            margin: 10
+            margin: 20
             conditions:
               state == offline: {string: {text: offline, foreground: ff0000ff}}
               state == stopped: {string: {text: stopped}}
@@ -278,13 +278,13 @@ bar:
         time-format: "%H:%M %Z"
         content:
           - string: {text: , font: *awesome}
-          - string: {text: "{date}", right-margin: 5}
+          - string: {text: "{date}", right-margin: 10}
           - string: {text: , font: *awesome}
           - string: {text: "{time}"}
     - label:
         content:
           string:
-            on-click: systemctl poweroff
+            on-click: systemctl suspend
             text: 
             font: *awesome
 
