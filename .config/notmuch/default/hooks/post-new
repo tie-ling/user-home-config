@@ -1,0 +1,44 @@
+#!/usr/bin/env python
+from notmuch import Query, Database
+# dangerous expunge command: expunge tag:deleted
+
+# explanation: in gmail; "visible IMAP Folders" can be configured;  in
+# https://mail.google.com/mail/u/0/#settings/labels
+# my case I configured "INBOX", "Sent" and "Drafts" to be visible to
+# IMAP clients.
+
+# https://mail.google.com/mail/u/0/#settings/fwdandpop
+# Then, in the POP/IMAP settings; choose these two options
+# When I mark a message in IMAP as deleted: Auto-Expunge off - Wait for the client to update the server.
+# When a message is marked as deleted and expunged from the last visible IMAP folder: Move the message to the Trash
+
+
+
+# mails expunged locally will be moved to Trash by gmail and permanently deleted 30days later
+# 
+import pathlib
+
+db = Database('/home/yc/Mail', mode=Database.MODE.READ_WRITE)
+
+def tag_sent():
+    msgs = Query(db, "tag:new from:gyuchen86@gmail.com").search_messages()
+    msgs_list = list(msgs)
+    for msg in msgs_list:
+        msg.remove_tag("new")
+        msg.remove_tag("unread")
+        msg.add_tag("sent")
+    return 0
+
+def tag_apple():
+    msgs = Query(db, "path:Apple/** tag:new").search_messages()
+    msgs_list = list(msgs)
+    for msg in msgs_list:
+        msg.remove_tag("new")
+        msg.remove_tag("unread")
+        msg.add_tag("aapl")
+    return 0
+
+
+if __name__ == "__main__":
+    tag_sent()
+    tag_apple()

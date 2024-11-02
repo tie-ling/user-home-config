@@ -1,0 +1,73 @@
+IMAPAccount     Personal
+Host            imap.gmail.com
+User            gyuchen86@gmail.com
+PassCmd         "cat /etc/pass-gmail"
+TLSType         IMAPS
+SystemCertificates      yes
+
+IMAPStore       Personal-remote
+Account         Personal
+
+MaildirStore    Personal-local
+SubFolders      Verbatim
+Path            ~/Mail/Personal/
+Inbox           ~/Mail/Personal/INBOX
+
+Channel         Personal-inbox
+Far             :Personal-remote:"INBOX"
+Near            :Personal-local:INBOX
+Create          Near
+Expunge         Both
+SyncState       *
+
+Channel         Personal-sent
+Far             :Personal-remote:"[Gmail]/Sent Mail"
+Near            :Personal-local:Sent
+Create          Near
+Expunge         Both
+SyncState       *
+
+Channel         Personal-drafts
+Far             :Personal-remote:"[Gmail]/Drafts"
+Near            :Personal-local:Drafts
+Create          Near
+Expunge         Both
+SyncState       *
+
+IMAPAccount     Apple
+Host            imap.mail.me.com
+PassCmd         "cat /etc/pass-icloud"
+User            gyuchen86@icloud.com
+TLSType         IMAPS
+SystemCertificates      yes
+
+IMAPStore       Apple-remote
+Account         Apple
+
+MaildirStore    Apple-local
+SubFolders      Verbatim
+Path            ~/Mail/Apple/
+Inbox           ~/Mail/Apple/INBOX
+
+Channel         Apple-inbox
+Far             :Apple-remote:"INBOX"
+Near            :Apple-local:INBOX
+Create          Near
+Expunge         Both
+SyncState       *
+
+Channel         Apple-junk
+Far             :Apple-remote:"Junk"
+Near            :Apple-local:Junk
+Create          Near
+Expunge         Both
+SyncState       *
+
+
+
+
+
+
+
+
+

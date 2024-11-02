@@ -1,0 +1,21 @@
+[MIME Cache]
+application/eps=org.pwmt.zathura-sandbox.desktop;
+application/epub+zip=org.pwmt.zathura-sandbox.desktop;
+application/oxps=org.pwmt.zathura-sandbox.desktop;
+application/pdf=org.pwmt.zathura-sandbox.desktop;
+application/postscript=org.pwmt.zathura-sandbox.desktop;
+application/x-7z-compressed=org.pwmt.zathura-sandbox.desktop;
+application/x-cb7=org.pwmt.zathura-sandbox.desktop;
+application/x-cbr=org.pwmt.zathura-sandbox.desktop;
+application/x-cbt=org.pwmt.zathura-sandbox.desktop;
+application/x-cbz=org.pwmt.zathura-sandbox.desktop;
+application/x-eps=org.pwmt.zathura-sandbox.desktop;
+application/x-fictionbook=org.pwmt.zathura-sandbox.desktop;
+application/x-rar=org.pwmt.zathura-sandbox.desktop;
+application/x-tar=org.pwmt.zathura-sandbox.desktop;
+application/zip=org.pwmt.zathura-sandbox.desktop;
+image/eps=org.pwmt.zathura-sandbox.desktop;
+image/vnd.djvu=org.pwmt.zathura-sandbox.desktop;
+image/vnd.djvu+multipage=org.pwmt.zathura-sandbox.desktop;
+image/x-eps=org.pwmt.zathura-sandbox.desktop;
+inode/directory=org.pwmt.zathura-sandbox.desktop;

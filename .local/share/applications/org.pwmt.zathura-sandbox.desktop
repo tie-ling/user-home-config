@@ -1,0 +1,12 @@
+# nix-shell -p desktop-file-utils --run "update-desktop-database -v ~/.local/share/applications"
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Zathura Sandboxed
+Comment=A minimalistic document viewer
+Exec=zathura-sandbox %U
+Icon=org.pwmt.zathura
+Terminal=false
+NoDisplay=true
+Categories=Office;Viewer;
+MimeType=application/pdf;application/oxps;application/epub+zip;application/x-fictionbook;application/x-cbr;application/x-rar;application/x-cbz;application/zip;application/x-cb7;application/x-7z-compressed;application/x-cbt;application/x-tar;inode/directory;image/vnd.djvu;image/vnd.djvu+multipage;application/postscript;application/eps;application/x-eps;image/eps;image/x-eps;
