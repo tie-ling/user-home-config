@@ -290,3 +290,5 @@ output DP-5 scale 2
 
 bindsym $mod+f1 output eDP-1 enable
 bindsym $mod+Shift+f1 output eDP-1 disable
+
+bindsym $mod+f10 exec grim
