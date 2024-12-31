@@ -1,6 +1,5 @@
-mnthtw () {
-    doas mount -t davfs  -o uid=1000 -o gid=100 https://cloud.htw-berlin.de/remote.php/dav/files/s0596965/ /home/yc/HTW_Cloud
-}
+# unlimited bash history
+unset HISTSIZE HISTFILESIZE
 
 e () {
     emacsclient --alternate-editor='' --create-frame  "${@}"
@@ -18,7 +17,5 @@ gitpushall () {
     find ~ -name '.git' -type d -print0 | xargs --verbose -0I{} git -C {} push
 }
 
-tom () {
-    python ~/tomato/tyc.py
-}
-export LEDGER_FILE=~/hledger/yc.hledger
+export LEDGER_FILE=~/Documents/hledger/yc.hledger
+
