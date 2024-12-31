@@ -14,7 +14,7 @@ tablap () {
 }
 
 gitpushall () {
-    find ~ -name '.git' -type d -print0 | xargs --verbose -0I{} git -C {} push
+    find ~ -name '.git' -type d -print0 | xargs --verbose -0I{} git -C {}/.. push
 }
 
 export LEDGER_FILE=~/Documents/hledger/yc.hledger
