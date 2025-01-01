@@ -26,6 +26,3 @@ gitpushall () {
 }
 
 export LEDGER_FILE=$HOME/Documents/hledger/yc.hledger
-# set verbose at the end ; to avoid cluttering shell
-# dont use xtrace, which shows all details during TAB-completion
-set -o verbose
