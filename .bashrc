@@ -1,5 +1,10 @@
-# unlimited bash history
-unset HISTSIZE HISTFILESIZE
+# safe shell options
+# see bash man page for details
+set -o posix
+set -o xtrace
+set -o noglob
+set -o nounset
+set -o noclobber
 
 e () {
     emacsclient --alternate-editor='' --create-frame  "${@}"
@@ -17,5 +22,5 @@ gitpushall () {
     find ~ -name '.git' -type d -print0 | xargs --verbose -0I{} git -C {}/.. push
 }
 
-export LEDGER_FILE=~/Documents/hledger/yc.hledger
+export LEDGER_FILE=$HOME/Documents/hledger/yc.hledger
 
