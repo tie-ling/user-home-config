@@ -1,7 +1,6 @@
 # safe shell options
 # see bash man page for details
 set -o posix
-set -o xtrace
 set -o noglob
 set -o nounset
 set -o noclobber
@@ -23,4 +22,5 @@ gitpushall () {
 }
 
 export LEDGER_FILE=$HOME/Documents/hledger/yc.hledger
-
+# set xtrace at the end ; to avoid cluttering shell
+set -o xtrace
