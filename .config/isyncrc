@@ -1,7 +1,7 @@
 IMAPAccount     Personal
 Host            imap.gmail.com
 User            gyuchen86@gmail.com
-PassCmd         "cat /etc/pass-gmail"
+PassCmd         "pass show mail/app-password/gmail.com"
 TLSType         IMAPS
 SystemCertificates      yes
 
@@ -36,7 +36,7 @@ SyncState       *
 
 IMAPAccount     Apple
 Host            imap.mail.me.com
-PassCmd         "cat /etc/pass-icloud"
+PassCmd         "pass show mail/app-password/mail.me.com"
 User            gyuchen86@icloud.com
 TLSType         IMAPS
 SystemCertificates      yes

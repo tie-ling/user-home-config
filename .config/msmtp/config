@@ -1,0 +1,14 @@
+defaults
+auth on
+port 587
+tls on
+tls_starttls on
+
+account Personal
+from gyuchen86@gmail.com
+host smtp.gmail.com
+passwordeval pass show mail/app-password/gmail.com
+user gyuchen86@gmail.com
+
+
+account default : Personal
