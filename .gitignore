@@ -19,3 +19,4 @@ Remote
 Web
 sys-conf
 .ssh/known_hosts
+.ssh/known_hosts.old

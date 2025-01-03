@@ -315,3 +315,9 @@ bindsym $mod+Shift+l exec systemctl suspend
 exec systemctl --user start emacs
 exec dconf write /org/gnome/desktop/interface/enable-animations false
 exec dconf write /org/gnome/desktop/interface/gtk-key-theme 'Emacs'
+
+
+exec wl-gammarelay-rs
+bindsym $mod+Control+0          exec busctl --user set-property rs.wl-gammarelay / rs.wl.gammarelay Brightness d 1.0
+bindsym $mod+Control+Underscore exec busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateBrightness d -0.05
+bindsym $mod+Control+Plus       exec busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateBrightness d +0.05

@@ -11,6 +11,12 @@ idle_fg = "#abcdef"
 icons = "none"
 
 [[block]]
+block = "hueshift"
+hue_shifter = "wl_gammarelay_rs"
+step = 50
+click_temp = 3500
+
+[[block]]
 block = "load"
 format = " $icon $1m.eng(w:4) "
 interval = 1
