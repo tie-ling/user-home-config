@@ -32,5 +32,8 @@ gitstatusall () {
 export LEDGER_FILE=$HOME/Documents/hledger/yc.hledger
 
 ede () {
-    espeak -s 200 -v mb/mb-de6 -m -f ${@}
+    name=${@}
+    espeak -s 170 -v mb/mb-de6 -m -w ${name}.wav -f ${name};
+    opusenc --speech --bitrate 32 ${name}.wav ${name}.opus
+    rm ${name}.wav
 }
