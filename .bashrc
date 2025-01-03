@@ -26,4 +26,7 @@ gitpushall () {
 }
 
 export LEDGER_FILE=$HOME/Documents/hledger/yc.hledger
-alias ede='espeak -s 250 -v mb/mb-de6 -m -f'
+
+ede () {
+    espeak -s 250 -v mb/mb-de6 -m -f ${@}
+}
