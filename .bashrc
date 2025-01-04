@@ -1,7 +1,7 @@
 # when HISTTIMEFORMAT is set;
 # save timestamp (unix epoch) in history file;
 # and display history in this format when $(history) is invoked
-export HISTTIMEFORMAT="[%FT%H:%M:%S%z] "
+export HISTTIMEFORMAT="%m-%dT%H:%M "
 # longer shell history than default (500)
 export HISTFILESIZE=10000
 export HISTSIZE=10000
