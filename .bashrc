@@ -39,14 +39,14 @@ gitstatusall () {
 export LEDGER_FILE=$HOME/Documents/hledger/yc.hledger
 
 ede () {
-    name=${@}
+    local name=${@}
     espeak -s 170 -v mb/mb-de6 -m -w ${name}.wav -f ${name};
     opusenc --speech --bitrate 32 ${name}.wav ${name}.opus
     rm ${name}.wav
 }
 
 connfiio () {
-    fiiomac="40:ED:98:19:8E:39"
+    local fiiomac="40:ED:98:19:8E:39"
     bluetoothctl <<EOF
 pair $fiiomac
 connect $fiiomac
