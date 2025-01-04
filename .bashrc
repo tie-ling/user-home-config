@@ -1,3 +1,10 @@
+# when HISTTIMEFORMAT is set;
+# save timestamp (unix epoch) in history file;
+# and display history in this format when $(history) is invoked
+export HISTTIMEFORMAT="[%FT%H:%M:%S%z] "
+# longer shell history than default (500)
+export HISTFILESIZE=10000
+export HISTSIZE=10000
 # safe shell options
 # see bash man page for details
 set -o posix
@@ -37,3 +44,14 @@ ede () {
     opusenc --speech --bitrate 32 ${name}.wav ${name}.opus
     rm ${name}.wav
 }
+
+connfiio () {
+    fiiomac="40:ED:98:19:8E:39"
+    bluetoothctl <<EOF
+pair $fiiomac
+connect $fiiomac
+EOF
+}
+
+# w3m needs history file to exist to save browsing history
+if ! [ -e $HOME/.w3m/history ]; then touch $HOME/.w3m/history; fi
