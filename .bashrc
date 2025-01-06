@@ -32,6 +32,11 @@ gitpushall () {
     find ~ -name '.git' -type d -print0 | xargs --verbose -0I{} git -C {}/.. push
 }
 
+gitpullall () {
+    find ~ -name '.git' -type d -print0 | xargs --verbose -0I{} git -C {}/.. pull
+}
+
+
 gitstatusall () {
     find ~ -name '.git' -type d -print0 | xargs --verbose -0I{} git -C {}/.. status
 }
