@@ -58,5 +58,9 @@ connect $fiiomac
 EOF
 }
 
+newmail () {
+    mbsync -a; notmuch new;
+}
+
 # w3m needs history file to exist to save browsing history
 if ! [ -e $HOME/.w3m/history ]; then touch $HOME/.w3m/history; fi
