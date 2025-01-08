@@ -143,7 +143,7 @@
 (use-package org
   :custom
   (org-babel-load-languages '((haskell . t) (python . t) (emacs-lisp . t) (shell . t)))
-  (org-export-initial-scope 'subtree)
+  (org-export-initial-scope 'buffer)
   (org-modules
    '(ol-bbdb ol-bibtex ol-doi ol-eww ol-info ol-irc ol-mhe ol-rmail org-tempo))
   :hook
