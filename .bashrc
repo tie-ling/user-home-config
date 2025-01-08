@@ -17,11 +17,7 @@ e () {
 }
 
 tab1080 () {
-    swaymsg input 9580:110:PenTablet_Pen  map_to_region 950 200 1000 562
-}
-
-tablap () {
-    swaymsg input 9580:110:PenTablet_Pen map_to_region 0 0 1280 720
+    swaymsg input 9580:110:PenTablet_Pen  map_to_region 768 100 1152 648
 }
 
 web () {
