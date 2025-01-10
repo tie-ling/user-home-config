@@ -58,5 +58,9 @@ newmail () {
     mbsync -a; notmuch new;
 }
 
+lapbatsave () {
+    swaymsg -- output eDP-1 mode --custom 1280x720@60Hz scale 1
+}
+
 # w3m needs history file to exist to save browsing history
 if ! [ -e $HOME/.w3m/history ]; then touch $HOME/.w3m/history; fi
