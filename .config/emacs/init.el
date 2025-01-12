@@ -142,28 +142,12 @@
 
 (use-package org
   :custom
+  (org-latex-compiler "lualatex")
   (org-babel-load-languages '((haskell . t) (python . t) (emacs-lisp . t) (shell . t)))
   (org-export-initial-scope 'buffer)
   (org-modules
    '(ol-bbdb ol-bibtex ol-doi ol-eww ol-info ol-irc ol-mhe ol-rmail org-tempo))
-  :hook
-  ;; in org mode, do not use <> electric pairs, as this is used by
-  ;; org-tempo for structure templates
-  (org-mode . (lambda ()
-           (setq-local electric-pair-inhibit-predicate
-                   `(lambda (c)
-                  (if (char-equal c ?<) t (,electric-pair-inhibit-predicate c)))))))
-
-
-(use-package text-mode)
-
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(electric-pair-mode t nil nil "Customized with use-package elec-pair")
- '(org-structure-template-alist
+  (org-structure-template-alist
    '(("a" . "export ascii")
      ("c" . "center")
      ("C" . "comment")
@@ -175,10 +159,93 @@
      ("s" . "src")
      ("v" . "verse")
      ("hs" . "src haskell")
-     ("py" . "src python"))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+     ("py" . "src python")))
+  :hook
+  ;; in org mode, do not use <> electric pairs, as this is used by
+  ;; org-tempo for structure templates
+  (org-mode . (lambda ()
+           (setq-local electric-pair-inhibit-predicate
+                   `(lambda (c)
+                  (if (char-equal c ?<) t (,electric-pair-inhibit-predicate c)))))))
+
+
+(use-package text-mode)
+
+(use-package context
+  :hook
+  ((ConTeXt-mode . turn-on-reftex)
+
+   ;; show \alpha as α and \mathbb{R} as ℝ
+   (ConTeXt-mode . prettify-symbols-mode)
+
+   ;; shortcuts for symbols
+   (ConTeXt-mode . LaTeX-math-mode))
+
+  :custom
+  ;; AUCTeX defaults to mkii; change to iv for iv and lmtx
+  (ConTeXt-Mark-version "IV")
+
+  ;; Enable electric left right brace
+  (LaTeX-electric-left-right-brace t)
+
+  ;; Do not unprettify symbol at point
+  (prettify-symbols-unprettify-at-point nil)
+
+  ;; Let AUCTeX properly detect formula environment as math mode
+  (texmathp-tex-commands '(("\\startformula" sw-on) ("\\stopformula" sw-off)))
+
+  ;; Set PDF viewer
+  (TeX-view-program-selection '((output-pdf "Zathura")))
+
+  ;; Don't as for permission, just save all files
+  (TeX-save-query nil)
+
+  ;; Auto-save
+  (TeX-auto-save t)
+
+  ;; Debug bad boxes and warnings after compilation via
+  ;; C-c ` key
+  (TeX-debug-bad-boxes t)
+  (TeX-debug-warnings t)
+
+  ;; Electric inline math, 
+  (TeX-electric-math '("$" . "$"))
+
+  ;; Electric sub and superscript, inserts {} after ^ and _
+  ;; such as a^{}.
+  (TeX-electric-sub-and-superscript t)
+
+  ;; RefTex
+  (reftex-plug-into-AUCTeX t)
+
+  ;; Customize keyboard shortcuts for TeX math macros
+  (LaTeX-math-list
+   '(("o r" "mathbb{R}" nil nil)
+     ("o Q" "qquad" nil nil)
+     ("o q" "quad" nil nil)
+     ("o n" "mathbb{N}" nil nil)
+     (?= "coloneq" nil nil)
+     ("o c" "mathbb{C}" nil nil)))
+
+  :bind
+  ;; Electric \left(\right) \left[\right] \left\{\right\}
+  ;; only left brace; there is no right electric brace function
+  (:map ConTeXt-mode-map ("(" . LaTeX-insert-left-brace))
+  (:map ConTeXt-mode-map ("[" . LaTeX-insert-left-brace))
+  (:map ConTeXt-mode-map ("{" . LaTeX-insert-left-brace))
+
+  :config
+  (add-hook 'TeX-after-compilation-finished-functions
+            #'TeX-revert-document-buffer)
+
+  ;; Prettify symbols mode, customizable.
+  (with-eval-after-load "tex-mode"
+    (dolist (symb
+             '(("\\colon" . ?:)
+               ("\\mathbb{C}" . ?ℂ)
+               ("\\mathbb{K}" . ?𝕂)))
+      (add-to-list 'tex--prettify-symbols-alist symb))))
+
+(use-package haskell-mode
+  :custom
+  (haskell-literate-default 'tex))
