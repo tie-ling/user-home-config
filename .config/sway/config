@@ -295,8 +295,6 @@ input type:touch events disabled
 # Working Area 255.06 x 159.84mm
 # Not 16:9 ratio
 # map to 1920x1080 screen (3840x2160 with scale 2)
-# result working_area x6.7
-input 9580:109:GAOMON_Gaomon_Tablet_M10KPRO_Pen map_to_region 211 10 1709 1071
 
 
 # clamshell mode
@@ -323,4 +321,4 @@ bindsym $mod+Control+Underscore exec busctl --user set-property rs.wl-gammarelay
 
 
 # 16:10 ratio of tablet working area
-input 9580:110:PenTablet_Pen  map_to_region 500 0 1600 1000
+input 9580:110:PenTablet_Pen  map_to_region 320 0 1600 1000
