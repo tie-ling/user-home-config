@@ -95,34 +95,6 @@
 
 (use-package notmuch)
 
-(use-package LaTeX-mode
-  :mode ("\\.tex\\'")
-
-  :custom
-  ;; Enable electric left right brace
-  (LaTeX-electric-left-right-brace t)
-
-  ;; Set PDF viewer
-  (TeX-view-program-selection '((output-pdf "Zathura")))
-
-  ;; Don't as for permission, just save all files
-  (TeX-save-query nil)
-
-  ;; Auto-save
-  (TeX-auto-save t)
-
-  ;; Debug bad boxes and warnings after compilation via
-  ;; C-c ` key
-  (TeX-debug-bad-boxes t)
-  (TeX-debug-warnings t)
-
-  ;; Electric inline math, 
-  (TeX-electric-math '("$" . "$"))
-
-  :config
-  (add-hook 'TeX-after-compilation-finished-functions
-            #'TeX-revert-document-buffer))
-
 (use-package counsel
   :config
   (ivy-mode 1)
