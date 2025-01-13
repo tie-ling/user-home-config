@@ -143,7 +143,7 @@
 
 (use-package text-mode)
 
-(use-package context
+(use-package ConTeXt-mode
   :hook
   ((ConTeXt-mode . turn-on-reftex)
 

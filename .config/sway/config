@@ -320,3 +320,7 @@ exec dconf write /org/gnome/desktop/interface/gtk-key-theme 'Emacs'
 exec wl-gammarelay-rs
 bindsym $mod+Control+0          exec busctl --user set-property rs.wl-gammarelay / rs.wl.gammarelay Brightness d 1
 bindsym $mod+Control+Underscore exec busctl --user set-property rs.wl-gammarelay /outputs/DP_1 rs.wl.gammarelay Brightness d 0.5
+
+
+# 16:10 ratio of tablet working area
+input 9580:110:PenTablet_Pen  map_to_region 500 0 1600 1000
