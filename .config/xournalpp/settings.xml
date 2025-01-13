@@ -110,7 +110,7 @@
   <property name="trySelectOnStrokeFiltered" value="false"/>
   <property name="snapRecognizedShapesEnabled" value="false"/>
   <property name="restoreLineWidthEnabled" value="false"/>
-  <property name="numIgnoredStylusEvents" value="10"/>
+  <property name="numIgnoredStylusEvents" value="16"/>
   <property name="inputSystemTPCButton" value="true"/>
   <property name="inputSystemDrawOutsideWindow" value="false"/>
   <property name="preferredLocale" value=""/>
