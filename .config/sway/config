@@ -212,9 +212,10 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
+font Sans Serif 10
 
 bar {
-    font pango:DejaVu Sans Mono, FontAwesome 12
+    font Sans Serif, FontAwesome 10
     position bottom
     mode hide
     status_command i3status-rs
