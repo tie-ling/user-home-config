@@ -230,8 +230,12 @@ char."
                ("\\mathbb{K}" . ?𝕂)))
       (add-to-list 'tex--prettify-symbols-alist symb))))
 
+(defun lithaskell-insert-code ()
+  (interactive)
+  (insert "\\begin{code}\n" "\\end{code}"))
+
 (use-package haskell-mode
   :custom
   (haskell-literate-default 'tex)
-  :config
-  (define-key interactive-haskell-mode-map (kbd "C-c C-e") "\\begin{code}\n\\end{code}"))
+  :bind
+  (:map interactive-haskell-mode-map ("C-c C-e" . lithaskell-insert-code)))
