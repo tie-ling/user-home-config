@@ -232,4 +232,6 @@ char."
 
 (use-package haskell-mode
   :custom
-  (haskell-literate-default 'tex))
+  (haskell-literate-default 'tex)
+  :config
+  (define-key interactive-haskell-mode-map (kbd "C-c C-e") "\\begin{code}\n\\end{code}"))
