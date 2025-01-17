@@ -21,8 +21,9 @@ set $menu rofi -terminal foot -show combi -modes combi -combi-modes "window,file
 #
 # Default wallpaper (more resolutions are available in /run/current-system/sw/share/backgrounds/sway/)
 output * bg /run/current-system/sw/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-output eDP-1 mode --custom 1280x720@60Hz scale 1
-output DP-1 mode --custom 2560x1440@60Hz scale 1
+output eDP-1 mode --custom 1280x720@60Hz
+output DP-1 mode --custom 1920x1080@60Hz
+output * scale 1
 
 input type:keyboard xkb_file $HOME/.config/sway/en-us-sticky-mod.txt
 #
@@ -296,14 +297,11 @@ input type:touch events disabled
 # 9580:109:GAOMON_Gaomon_Tablet_M10KPRO_Pen
 # Working Area 255.06 x 159.84mm
 # Not 16:9 ratio
-# map to 1920x1080 screen (3840x2160 with scale 2)
 
 
 # clamshell mode
 bindswitch --locked lid:on output eDP-1 disable
 bindswitch --locked lid:off output eDP-1 enable
-
-output DP-1 scale 2
 
 bindsym $mod+f1 output eDP-1 enable
 bindsym $mod+Shift+f1 output eDP-1 disable
