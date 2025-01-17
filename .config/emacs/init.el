@@ -144,6 +144,7 @@
 (use-package text-mode)
 
 (use-package ConTeXt-mode
+  :mode ("\\.tex\\'")
   :hook
   ((ConTeXt-mode . turn-on-reftex)
 
@@ -164,7 +165,10 @@
   (prettify-symbols-unprettify-at-point nil)
 
   ;; Let AUCTeX properly detect formula environment as math mode
-  (texmathp-tex-commands '(("\\startformula" sw-on) ("\\stopformula" sw-off)))
+  (texmathp-tex-commands
+   '(("\\startformula" sw-on)
+     ("\\stopformula" sw-off)
+     ("\\m" arg-on)))
 
   ;; Set PDF viewer
   (TeX-view-program-selection '((output-pdf "Zathura")))
@@ -181,7 +185,7 @@
   (TeX-debug-warnings t)
 
   ;; Electric inline math, 
-  (TeX-electric-math '("$" . "$"))
+  (TeX-electric-math '("\\m{" . "}"))
 
   ;; Electric sub and superscript, inserts {} after ^ and _
   ;; such as a^{}.
@@ -209,6 +213,14 @@
   :config
   (add-hook 'TeX-after-compilation-finished-functions
             #'TeX-revert-document-buffer)
+
+  ;; in context mode, override auctex function for inserting mathcal
+  (defun LaTeX-math-cal (char dollar)
+      "Insert a {\\cal CHAR}.  If DOLLAR is non-nil, put $'s around it.
+If `TeX-electric-math' is non-nil wrap that symbols around the
+char."
+      (interactive "*c\nP")
+      (insert "\\mathcal{" (char-to-string char) "}"))
 
   ;; Prettify symbols mode, customizable.
   (with-eval-after-load "tex-mode"
