@@ -198,7 +198,10 @@
   (LaTeX-math-list
    '(("o r" "mathbb{R}" nil nil)
      ("o Q" "qquad" nil nil)
+     ("o o" "sim" nil nil)
+     ("," "smblksquare" nil nil)
      ("o q" "quad" nil nil)
+     ("o b" LaTeX-math-bf nil nil)
      ("o n" "mathbb{N}" nil nil)
      (?= "coloneq" nil nil)
      ("o c" "mathbb{C}" nil nil)))
@@ -222,13 +225,31 @@ char."
       (interactive "*c\nP")
       (insert "\\mathcal{" (char-to-string char) "}"))
 
+
+  (defun LaTeX-math-bf (char dollar)
+      "Insert a {\\cal CHAR}.  If DOLLAR is non-nil, put $'s around it.
+If `TeX-electric-math' is non-nil wrap that symbols around the
+char."
+      (interactive "*c\nP")
+      (insert "\\mathbf{" (char-to-string char) "}"))
+
   ;; Prettify symbols mode, customizable.
   (with-eval-after-load "tex-mode"
     (dolist (symb
              '(("\\colon" . ?:)
+               ("\\msansS" . ?𝖲)
+               ("\\smblksquare" . ?▪)
+               ("\\mathbf{A}" . ?𝐀)
+               ("\\mathbf{B}" . ?𝐁)
+               ("\\mathbf{C}" . ?𝐂)
+               ("\\mathbf{D}" . ?𝐃)
+               ("\\mathbf{X}" . ?𝐗)
+               ("\\mathbf{Y}" . ?𝐘)
                ("\\mathbb{C}" . ?ℂ)
                ("\\mathbb{K}" . ?𝕂)))
       (add-to-list 'tex--prettify-symbols-alist symb))))
+
+
 
 (defun lithaskell-insert-code ()
   (interactive)
