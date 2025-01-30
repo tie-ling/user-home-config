@@ -22,7 +22,6 @@
   (enable-local-variables nil)
   (inhibit-startup-screen t)
   (menu-bar-mode nil)
-  (ledger-report-use-strict t)
   (mail-envelope-from 'header)
   (mail-specify-envelope-from t)
   (message-sendmail-envelope-from 'header)
@@ -32,19 +31,6 @@
   (modus-themes-italic-constructs t)
   (modus-themes-mixed-fonts t)
   (network-security-level 'paranoid)
-  (notmuch-crypto-process-mime nil)
-  (notmuch-saved-searches
-   '((:name "inbox" :query "tag:inbox" :key "i")
-     (:name "deleted" :query "tag:deleted")
-     (:name "unread" :query "tag:unread" :key "u")
-     (:name "flagged" :query "tag:flagged" :key "f")
-     (:name "sent" :query "tag:sent" :key "t")
-     (:name "drafts" :query "tag:draft" :key "d")
-     (:name "all mail" :query "*" :key "a")
-     (:name "archived" :query
-            "not tag:deleted not tag:inbox  not tag:sent")))
-  (notmuch-show-logo nil)
-  (org-agenda-files nil)
   (read-buffer-completion-ignore-case t)
   (ring-bell-function nil)
   (scroll-bar-mode nil)
@@ -90,10 +76,20 @@
   :custom
   (indent-tabs-mode nil))
 
-(use-package ledger-mode
-  :mode ("\\.ledger\\'"))
-
-(use-package notmuch)
+(use-package notmuch
+  :custom
+  (notmuch-crypto-process-mime nil)
+  (notmuch-saved-searches
+   '((:name "inbox" :query "tag:inbox" :key "i")
+     (:name "deleted" :query "tag:deleted")
+     (:name "unread" :query "tag:unread" :key "u")
+     (:name "flagged" :query "tag:flagged" :key "f")
+     (:name "sent" :query "tag:sent" :key "t")
+     (:name "drafts" :query "tag:draft" :key "d")
+     (:name "all mail" :query "*" :key "a")
+     (:name "archived" :query
+            "not tag:deleted not tag:inbox  not tag:sent")))
+  (notmuch-show-logo nil))
 
 (use-package counsel
   :config
@@ -105,6 +101,7 @@
 (use-package ledger-mode
   :custom
   ((ledger-binary-path "hledger")
+   (ledger-report-use-strict t)
    (ledger-mode-should-check-version nil)
    (ledger-report-auto-width nil)
    (ledger-report-links-in-register nil)
@@ -114,8 +111,9 @@
 
 (use-package org
   :custom
+  (org-agenda-files nil)
   (org-display-custom-times t)
-  (org-time-stamp-custom-formats '("%m-%d" . "%H:%M")))
+  (org-time-stamp-custom-formats '("%m-%d" . "%H:%M"))
   (org-latex-compiler "lualatex")
   (org-babel-load-languages '((haskell . t) (python . t) (emacs-lisp . t) (shell . t)))
   (org-export-initial-scope 'buffer)
