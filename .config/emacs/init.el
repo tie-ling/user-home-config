@@ -114,6 +114,8 @@
 
 (use-package org
   :custom
+  (org-display-custom-times t)
+  (org-time-stamp-custom-formats '("%m-%d" . "%H:%M")))
   (org-latex-compiler "lualatex")
   (org-babel-load-languages '((haskell . t) (python . t) (emacs-lisp . t) (shell . t)))
   (org-export-initial-scope 'buffer)
@@ -138,7 +140,16 @@
   (org-mode . (lambda ()
            (setq-local electric-pair-inhibit-predicate
                    `(lambda (c)
-                  (if (char-equal c ?<) t (,electric-pair-inhibit-predicate c)))))))
+                  (if (char-equal c ?<) t
+                    (,electric-pair-inhibit-predicate c))))))
+  :config
+  (defun org-my-timestamp-range ()
+    (interactive)
+    (while (org-at-timestamp-p)
+      (forward-char))
+    (backward-char 1)
+    (insert "-")
+    (org-insert-time-stamp (current-time) t)))
 
 
 (use-package text-mode)
