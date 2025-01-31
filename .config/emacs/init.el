@@ -112,6 +112,11 @@
 (global-set-key (kbd "C-c a") #'org-agenda)
 (use-package org
   :custom
+  (org-agenda-prefix-format
+   '((agenda . "%?-12t% s")
+     (todo . "")
+     (tags . " %i %-12:c")
+     (search . " %i %-12:c")))
   (org-agenda-files '("~/Documents/agenda/2025"))
   (org-agenda-span 'day)
   (org-display-custom-times t)
