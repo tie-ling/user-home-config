@@ -18,7 +18,7 @@
   (auto-fill-function 'do-auto-fill t)
   (calendar-week-start-day 1)
   (custom-enabled-themes '(modus-operandi) nil nil "Customized with use-package custom")
-  (default-input-method "german")
+  (default-input-method "pyim")
   (enable-local-variables nil)
   (inhibit-startup-screen t)
   (menu-bar-mode nil)
@@ -112,6 +112,7 @@
 (global-set-key (kbd "C-c a") #'org-agenda)
 (use-package org
   :custom
+  (org-startup-folded 'overview)
   (org-agenda-prefix-format
    '((agenda . "%?-12t% s")
      (todo . "")
