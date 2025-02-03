@@ -14,6 +14,7 @@ text/x-csrc=emacsclient-terminal.desktop
 text/x-chdr=emacsclient-terminal.desktop
 text/x-java=emacsclient-terminal.desktop
 text/x-maven+xml=emacsclient-terminal.desktop
+application/vnd.openxmlformats-officedocument.wordprocessingml.document=abiword.desktop
 
 [Added Associations]
 application/pdf=org.pwmt.zathura-sandbox.desktop;
