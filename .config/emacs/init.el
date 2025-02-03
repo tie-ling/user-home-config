@@ -113,6 +113,7 @@
 (use-package org
   :custom
   (org-startup-folded t)
+  (org-agenda-start-with-log-mode 'clockcheck)
   (org-agenda-prefix-format
    '((agenda . "%?-12t% s")
      (todo . "")
@@ -147,15 +148,7 @@
            (setq-local electric-pair-inhibit-predicate
                    `(lambda (c)
                   (if (char-equal c ?<) t
-                    (,electric-pair-inhibit-predicate c))))))
-  :config
-  (defun org-my-timestamp-range ()
-    (interactive)
-    (while (org-at-timestamp-p)
-      (forward-char))
-    (backward-char 1)
-    (insert "--")
-    (org-insert-time-stamp (current-time) t)))
+                    (,electric-pair-inhibit-predicate c)))))))
 
 
 (use-package text-mode)
@@ -272,10 +265,11 @@ char."
 
 (defun lithaskell-insert-code ()
   (interactive)
-  (insert "\\begin{code}\n" "\\end{code}"))
+  (save-excursion (insert "\\begin{code}\n\n" "\\end{code}"))
+  (forward-line))
 
 (use-package haskell-mode
-  :custom
-  (haskell-literate-default 'tex)
   :bind
-  (:map interactive-haskell-mode-map ("C-c C-e" . lithaskell-insert-code)))
+  (:map haskell-literate-mode-map ("C-c C-e" . lithaskell-insert-code))
+  :custom
+  (haskell-literate-default 'tex))

@@ -1,0 +1,78 @@
+<!-- =====================================================================  -->
+<!-- This file contains AbiSuite Preferences.  AbiSuite is a suite of Open  -->
+<!-- Source desktop applications developed by AbiSource, Inc.  Information  -->
+<!-- about this application can be found at http://www.abisource.com        -->
+<!-- You should not edit this file by hand.                                 -->
+<!-- =====================================================================  -->
+
+<!--         Build_ID          = unknown -->
+<!--         Build_Version     = 3.0.6 -->
+<!--         Build_CompileTime = 00:00:00 -->
+<!--         Build_CompileDate = Jan  1 1980 -->
+
+<AbiPreferences app="abiword" ver="1.0">
+
+	<Select
+	    scheme="_custom_"
+	    autosaveprefs="1"
+	    useenvlocale="1"
+	/>
+
+	<!-- The following scheme, _builtin_, contains the built-in application
+	**** defaults and adjusted by the installation system defaults.  This scheme
+	**** is only written here as a reference.  Any schemes following this one
+	**** only list values that deviate from the built-in values.
+	**** Items values must observe XML encoding for double quote (&quot;),
+	**** ampersand (&amp;), and angle brackets (&lt; and &gt;).
+	-->
+
+	<Scheme
+		name="_builtin_"
+		AlwaysPromptEncoding="0"
+		KeyBindingsCycle="0"
+		TransparentColor="ffffff"
+		StringSet="en-US"
+		/>
+
+	<Scheme
+		name="_custom_"
+		layoutMode="2"
+		ZoomType="150"
+		ZoomPercentage="150"
+		/>
+
+	<Recent
+		max="9"
+		name1="file:///home/yc/Downloads/recht/Kursinhalte%20im%20Fach%20Wirtschaftsrecht%205.rtf"
+		/>
+
+	<Geometry
+		width="1920"
+		height="1063"
+		posx="1"
+		posy="143"
+		flags="2"
+		/>
+
+	<Log>
+	<!-- [Mon 03 Feb 2025 09:30:48 AM CET] message: XAP_ModuleManager::loadModule - (L104): loading /nix/store/n88isdkn3m77pzxljvnwzx85b8fyrs2c-abiword-3.0.6/lib/abiword-3.0/plugins/opendocument.so -->
+	<!-- [Mon 03 Feb 2025 09:30:48 AM CET] message: XAP_ModuleManager::loadModule - (L189): success /nix/store/n88isdkn3m77pzxljvnwzx85b8fyrs2c-abiword-3.0.6/lib/abiword-3.0/plugins/opendocument.so -->
+	<!-- [Mon 03 Feb 2025 09:30:48 AM CET] message: XAP_ModuleManager::loadModule - (L104): loading /nix/store/n88isdkn3m77pzxljvnwzx85b8fyrs2c-abiword-3.0.6/lib/abiword-3.0/plugins/openxml.so -->
+	<!-- [Mon 03 Feb 2025 09:30:48 AM CET] message: XAP_ModuleManager::loadModule - (L189): success /nix/store/n88isdkn3m77pzxljvnwzx85b8fyrs2c-abiword-3.0.6/lib/abiword-3.0/plugins/openxml.so -->
+	</Log>
+
+	<Fonts include="0">
+	<!--
+	     Here you can put a list of fonts to limit the fonts that appear 
+	     in the font UI:
+
+		<Face name="some face"/>
+
+	     The include attribute of 'Fonts' controls the significance of 
+	     the list:
+	     include="1" - limit fonts to those listed
+	     include="0" - exclude the listed fonts from the system font list
+	-->
+	</Fonts>
+
+</AbiPreferences>
