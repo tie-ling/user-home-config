@@ -65,7 +65,7 @@
   <property name="defaultSaveName" value="%F-Note-%H-%M"/>
   <property name="defaultPdfExportName" value="%{name}_annotated"/>
   <property name="autosaveEnabled" value="true"/>
-  <property name="autosaveTimeout" value="3"/>
+  <property name="autosaveTimeout" value="1"/>
   <property name="addHorizontalSpace" value="false"/>
   <property name="addHorizontalSpaceAmount" value="150"/>
   <property name="addVerticalSpace" value="false"/>
