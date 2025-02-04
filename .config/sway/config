@@ -22,8 +22,7 @@ set $menu rofi -terminal foot -show combi -modes combi -combi-modes "window,file
 # Default wallpaper (more resolutions are available in /run/current-system/sw/share/backgrounds/sway/)
 output * bg /run/current-system/sw/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 output eDP-1 mode --custom 1280x720@60Hz
-output DP-1 mode --custom 1920x1080@60Hz
-output * scale 1
+output DP-1 res 3840x2160 scale 2
 
 input type:keyboard xkb_file $HOME/.config/sway/en-us-sticky-mod.txt
 #
