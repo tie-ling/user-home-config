@@ -261,3 +261,15 @@ char."
       (add-to-list 'tex--prettify-symbols-alist symb))))
 
 (use-package haskell-ts-mode)
+
+;; 设置时间戳前，确保小时zero padded像07和22而且自己单独一行。
+;; 再用C-x n s来narrow到subtree。
+(defun org-my-set-timestamp ()
+  (interactive)
+  (while (re-search-forward "\\(^[[:digit:]]++$\\)" nil t)
+    (replace-match
+     (concat "<"
+             (format-time-string
+              "%Y-%m-%d %a "
+              (time-add (current-time) (* 24 3600)))
+             "\\1:00>"))))
