@@ -124,7 +124,6 @@
   (org-display-custom-times t)
   (org-time-stamp-custom-formats '("%m-%d" . "%H:%M"))
   (org-latex-compiler "lualatex")
-  (org-babel-load-languages '((haskell . t) (python . t) (emacs-lisp . t) (shell . t)))
   (org-export-initial-scope 'buffer)
   (org-modules
    '(ol-bbdb ol-bibtex ol-doi ol-eww ol-info ol-irc ol-mhe ol-rmail org-tempo))
@@ -139,7 +138,6 @@
      ("q" . "quote")
      ("s" . "src")
      ("v" . "verse")
-     ("hs" . "src haskell")
      ("py" . "src python")))
   :hook
   ;; in org mode, do not use <> electric pairs, as this is used by
@@ -261,15 +259,4 @@ char."
                ("\\mathbb{K}" . ?𝕂)))
       (add-to-list 'tex--prettify-symbols-alist symb))))
 
-
-
-(defun lithaskell-insert-code ()
-  (interactive)
-  (save-excursion (insert "\\begin{code}\n\n" "\\end{code}"))
-  (forward-line))
-
-(use-package haskell-mode
-  :bind
-  (:map haskell-literate-mode-map ("C-c C-e" . lithaskell-insert-code))
-  :custom
-  (haskell-literate-default 'tex))
+(use-package haskell-ts-mode)
