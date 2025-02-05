@@ -113,15 +113,16 @@
 (use-package org
   :custom
   (org-startup-folded t)
-  (org-agenda-start-with-log-mode 'clockcheck)
+  (org-agenda-window-setup 'only-window)
+  (org-agenda-start-with-log-mode nil)
   (org-agenda-prefix-format
-   '((agenda . "%?-12t% s")
+   '((agenda . "%?-12t")
      (todo . "")
      (tags . " %i %-12:c")
      (search . " %i %-12:c")))
   (org-agenda-files '("~/Documents/agenda/2025"))
   (org-agenda-span 'day)
-  (org-display-custom-times t)
+  (org-display-custom-times nil)
   (org-time-stamp-custom-formats '("%m-%d" . "%H:%M"))
   (org-latex-compiler "lualatex")
   (org-export-initial-scope 'buffer)
