@@ -1,11 +1,11 @@
 [Default Applications]
 audio/x-opus+ogg=mpv.desktop
-application/pdf=org.pwmt.zathura-sandbox.desktop
+application/pdf=org.pwmt.zathura.desktop
 image/jpeg=imv.desktop
 text/org=emacsclient-terminal.desktop
 text/plain=emacsclient-terminal.desktop
 text/x-tex=emacsclient-terminal.desktop
-application/epub+zip=org.pwmt.zathura-sandbox.desktop
+application/epub+zip=org.pwmt.zathura.desktop
 application/x-zerosize=emacsclient-terminal.desktop
 application/x-shellscript=emacsclient-terminal.desktop
 application/zip=xarchiver.desktop
@@ -17,10 +17,10 @@ text/x-maven+xml=emacsclient-terminal.desktop
 application/vnd.openxmlformats-officedocument.wordprocessingml.document=abiword.desktop
 
 [Added Associations]
-application/pdf=org.pwmt.zathura-sandbox.desktop;
+application/pdf=org.pwmt.zathura.desktop;
 image/jpeg=feh.desktop;imv.desktop;
 text/x-tex=emacsclient-terminal.desktop;
-application/epub+zip=org.pwmt.zathura-sandbox.desktop;
+application/epub+zip=org.pwmt.zathura.desktop;
 application/x-zerosize=emacsclient-terminal.desktop;
 application/x-shellscript=emacsclient-terminal.desktop;
 application/zip=xarchiver.desktop;
