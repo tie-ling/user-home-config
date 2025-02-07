@@ -1,9 +1,17 @@
+(setq native-comp-jit-compilation nil)
+
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(package-initialize)
+
 (setq wl-copy-process nil)
 (defun wl-copy (text)
-  (setq wl-copy-process (make-process :name "wl-copy"
-                                      :buffer nil
-                                      :command '("wl-copy" "-f" "-n")
-                                      :connection-type 'pipe))
+  (setq wl-copy-process
+        (make-process
+         :name "wl-copy"
+         :buffer nil
+         :command '("wl-copy" "-f" "-n")
+         :connection-type 'pipe))
   (process-send-string wl-copy-process text)
   (process-send-eof wl-copy-process))
 (defun wl-paste ()
@@ -41,8 +49,10 @@
   (tramp-mode nil)
   (user-mail-address "gyuchen86@gmail.com"))
 
-(use-package pyim)
+(use-package pyim
+  :ensure t)
 (use-package pyim-basedict
+  :ensure t
   :config
   (pyim-basedict-enable))
 
@@ -76,7 +86,14 @@
   :custom
   (indent-tabs-mode nil))
 
+(use-package nix-mode
+  :ensure t)
+
+(use-package haskell-ts-mode
+  :ensure t)
+
 (use-package notmuch
+  :ensure t
   :custom
   (notmuch-crypto-process-mime nil)
   (notmuch-saved-searches
@@ -91,7 +108,11 @@
             "not tag:deleted not tag:inbox  not tag:sent")))
   (notmuch-show-logo nil))
 
+(use-package magit
+  :ensure t)
+
 (use-package counsel
+  :ensure t
   :config
   (ivy-mode 1)
   :custom
@@ -99,6 +120,7 @@
   (ivy-count-format "(%d/%d) "))
 
 (use-package ledger-mode
+  :ensure t
   :custom
   ((ledger-binary-path "hledger")
    (ledger-report-use-strict t)
@@ -152,6 +174,9 @@
 
 
 (use-package text-mode)
+
+(use-package auctex
+  :ensure t)
 
 (use-package ConTeXt-mode
   :mode ("\\.tex\\'")
