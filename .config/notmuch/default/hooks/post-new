@@ -34,11 +34,20 @@ def tag_apple():
     msgs_list = list(msgs)
     for msg in msgs_list:
         msg.remove_tag("new")
-        msg.remove_tag("unread")
         msg.add_tag("aapl")
     return 0
+
+def tag_apvc():
+    msgs = Query(db, "path:Apvc/** tag:new").search_messages()
+    msgs_list = list(msgs)
+    for msg in msgs_list:
+        msg.remove_tag("new")
+        msg.add_tag("apvc")
+    return 0
+
 
 
 if __name__ == "__main__":
     tag_sent()
     tag_apple()
+    tag_apvc()
