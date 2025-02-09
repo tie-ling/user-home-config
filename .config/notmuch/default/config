@@ -28,7 +28,7 @@ path=/home/yc/Mail
 #
 [user]
 primary_email=gyuchen86@gmail.com
-other_email=gyuchen86@icloud.com
+other_email=gyuchen86@icloud.com;yc@apvc.uk
 # Configuration for "notmuch new"
 #
 # The following options are supported here:
