@@ -30,7 +30,6 @@
   (menu-bar-mode nil)
   (mail-envelope-from 'header)
   (mail-specify-envelope-from t)
-  (mail-default-reply-to "yc@apvc.uk")
   (message-sendmail-envelope-from 'header)
   (mode-line-compact 'long)
   (modus-themes-bold-constructs nil)
