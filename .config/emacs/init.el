@@ -173,6 +173,10 @@
 (use-package auctex
   :ensure t)
 
+(use-package sml-mode
+  :ensure t
+  :mode ("\\.sml\\'"))
+
 (use-package ConTeXt-mode
   :mode ("\\.tex\\'")
   :hook
