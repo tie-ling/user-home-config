@@ -1,5 +1,6 @@
 [Default Applications]
 audio/x-opus+ogg=mpv.desktop
+image/vnd.djvu+multipage=org.pwmt.zathura.desktop
 application/pdf=org.pwmt.zathura.desktop
 image/jpeg=imv.desktop
 text/org=emacsclient-terminal.desktop

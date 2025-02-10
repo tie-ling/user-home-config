@@ -87,9 +87,6 @@
 (use-package nix-mode
   :ensure t)
 
-(use-package haskell-ts-mode
-  :ensure t)
-
 (use-package notmuch
   :ensure t
   :custom
@@ -284,8 +281,6 @@ char."
                ("\\mathbb{K}" . ?𝕂)))
       (add-to-list 'tex--prettify-symbols-alist symb))))
 
-(use-package haskell-ts-mode)
-
 ;; 设置时间戳前，确保小时zero padded像07和22而且自己单独一行。
 ;; 再用C-x n s来narrow到subtree。
 (defun org-my-set-timestamp ()
@@ -297,16 +292,3 @@ char."
               "%Y-%m-%d %a "
               (time-add (current-time) (* 24 3600)))
              "\\1:00>"))))
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   '(auctex ledger-mode counsel pyim-basedict notmuch nix-mode magit haskell-ts-mode)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
