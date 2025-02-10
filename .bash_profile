@@ -1,3 +1,8 @@
+set -o posix
+set -o noglob
+set -o nounset
+set -o noclobber
+
 e () {
     emacsclient --alternate-editor='' --create-frame  "${@}"
 }
