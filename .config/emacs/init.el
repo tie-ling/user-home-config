@@ -45,7 +45,7 @@
   (tab-always-indent 'complete)
   (tool-bar-mode nil)
   (tramp-mode nil)
-  (user-mail-address "gyuchen86@gmail.com"))
+  (user-mail-address "gyuchen86@icloud.com"))
 
 (use-package pyim
   :ensure t)
