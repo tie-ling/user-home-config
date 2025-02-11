@@ -31,6 +31,7 @@
   (mail-envelope-from 'header)
   (mail-specify-envelope-from t)
   (message-sendmail-envelope-from 'header)
+  (message-default-mail-headers "Reply-To: Yuchen Guo <yc@apvc.uk>")
   (mode-line-compact 'long)
   (modus-themes-bold-constructs nil)
   (modus-themes-inhibit-reload nil)
@@ -45,7 +46,7 @@
   (tab-always-indent 'complete)
   (tool-bar-mode nil)
   (tramp-mode nil)
-  (user-mail-address "gyuchen86@icloud.com"))
+  (user-mail-address "yc@apvc.uk"))
 
 (use-package pyim
   :ensure t)
@@ -282,3 +283,4 @@ char."
                ("\\mathbb{C}" . ?ℂ)
                ("\\mathbb{K}" . ?𝕂)))
       (add-to-list 'tex--prettify-symbols-alist symb))))
+
