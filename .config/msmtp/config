@@ -5,10 +5,10 @@ tls on
 tls_starttls on
 
 account Personal
-from gyuchen86@gmail.com
-host smtp.gmail.com
-passwordeval pass show mail/app-password/gmail.com
-user gyuchen86@gmail.com
+from gyuchen86@icloud.com
+host smtp.mail.me.com
+passwordeval pass show mail/app-password/mail.me.com
+user gyuchen86@icloud.com
 
 
 account default : Personal

@@ -1,7 +1,7 @@
 IMAPAccount     Personal
-Host            imap.gmail.com
-User            gyuchen86@gmail.com
-PassCmd         "pass show mail/app-password/gmail.com"
+Host            mail.apvc.uk
+User            yc@apvc.uk
+PassCmd         "pass show mail/apvc.uk"
 TLSType         IMAPS
 SystemCertificates      yes
 
@@ -16,72 +16,6 @@ Inbox           ~/Mail/Personal/INBOX
 Channel         Personal-inbox
 Far             :Personal-remote:"INBOX"
 Near            :Personal-local:INBOX
-Create          Near
-Expunge         Both
-SyncState       *
-
-Channel         Personal-sent
-Far             :Personal-remote:"[Gmail]/Sent Mail"
-Near            :Personal-local:Sent
-Create          Near
-Expunge         Both
-SyncState       *
-
-Channel         Personal-drafts
-Far             :Personal-remote:"[Gmail]/Drafts"
-Near            :Personal-local:Drafts
-Create          Near
-Expunge         Both
-SyncState       *
-
-IMAPAccount     Apvc
-Host            mail.apvc.uk
-PassCmd         "pass show mail/apvc.uk"
-User            yc@apvc.uk
-TLSType         IMAPS
-SystemCertificates      yes
-
-IMAPStore       Apvc-remote
-Account         Apvc
-
-MaildirStore    Apvc-local
-SubFolders      Verbatim
-Path            ~/Mail/Apvc/
-Inbox           ~/Mail/Apvc/INBOX
-
-Channel         Apvc-inbox
-Far             :Apvc-remote:"INBOX"
-Near            :Apvc-local:INBOX
-Create          Near
-Expunge         Both
-SyncState       *
-
-
-IMAPAccount     Apple
-Host            imap.mail.me.com
-PassCmd         "pass show mail/app-password/mail.me.com"
-User            gyuchen86@icloud.com
-TLSType         IMAPS
-SystemCertificates      yes
-
-IMAPStore       Apple-remote
-Account         Apple
-
-MaildirStore    Apple-local
-SubFolders      Verbatim
-Path            ~/Mail/Apple/
-Inbox           ~/Mail/Apple/INBOX
-
-Channel         Apple-inbox
-Far             :Apple-remote:"INBOX"
-Near            :Apple-local:INBOX
-Create          Near
-Expunge         Both
-SyncState       *
-
-Channel         Apple-junk
-Far             :Apple-remote:"Junk"
-Near            :Apple-local:Junk
 Create          Near
 Expunge         Both
 SyncState       *
