@@ -92,15 +92,13 @@
   :custom
   (notmuch-crypto-process-mime nil)
   (notmuch-saved-searches
-   '((:name "inbox" :query "tag:inbox" :key "i")
+   '((:name "inbox" :query "tag:inbox not tag:deleted" :key "i")
      (:name "deleted" :query "tag:deleted")
      (:name "unread" :query "tag:unread" :key "u")
      (:name "flagged" :query "tag:flagged" :key "f")
      (:name "sent" :query "tag:sent" :key "t")
      (:name "drafts" :query "tag:draft" :key "d")
-     (:name "all mail" :query "*" :key "a")
-     (:name "archived" :query
-            "not tag:deleted not tag:inbox  not tag:sent")))
+     (:name "all mail" :query "*" :key "a")))
   (notmuch-show-logo nil))
 
 (use-package magit

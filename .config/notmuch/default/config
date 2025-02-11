@@ -44,7 +44,7 @@ other_email=gyuchen86@icloud.com
 #		in the mail store.
 #
 [new]
-tags=new
+tags=inbox
 ignore=.mbsyncstate;.uidvalidity
 # Search configuration
 #

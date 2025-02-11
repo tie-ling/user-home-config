@@ -17,5 +17,7 @@ Channel         Personal-inbox
 Far             :Personal-remote:"INBOX"
 Near            :Personal-local:INBOX
 Create          Near
-Expunge         Both
+# 每半年备份邮件为tar.gz。备份完成后在服务器端删除
+# 因此不在同步时删除邮件。
+Expunge         None
 SyncState       *
