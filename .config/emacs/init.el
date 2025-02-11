@@ -295,3 +295,6 @@ char."
               "%Y-%m-%d %a "
               (time-add (current-time) (* 24 3600)))
              "\\1:00>"))))
+
+(use-package haskell-ts-mode
+  :ensure t)
