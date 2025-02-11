@@ -27,8 +27,8 @@ path=/home/yc/Mail
 # address to which the original email was addressed.
 #
 [user]
-primary_email=yc@apvc.uk
-other_email=gyuchen86@icloud.com
+primary_email=gyuchen86@icloud.com
+other_email=yc@apvc.uk
 # Configuration for "notmuch new"
 #
 # The following options are supported here:
