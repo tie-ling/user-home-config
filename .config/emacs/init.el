@@ -133,11 +133,14 @@
   (org-agenda-start-with-log-mode nil)
   (org-clock-mode-line-total 'current)
   (org-agenda-prefix-format
-   '((agenda . "%?-12t")
-     (todo . "")
+   '((agenda . " %i %?-12t% s")
+     (todo . " %i %-12:c")
      (tags . " %i %-12:c")
      (search . " %i %-12:c")))
-  (org-agenda-files '("~/Documents/agenda/"))
+  (org-agenda-files '("~/Documents/org/agenda/logbook/"
+                      "~/Documents/org/agenda/schedule/"
+                      "~/Documents/org/agenda/todo/"))
+  (org-directory '("~/Documents/org"))
   (org-agenda-span 'day)
   (org-display-custom-times nil)
   (org-time-stamp-custom-formats '("%m-%d" . "%H:%M"))
@@ -283,23 +286,6 @@ char."
                ("\\mathbb{C}" . ?ℂ)
                ("\\mathbb{K}" . ?𝕂)))
       (add-to-list 'tex--prettify-symbols-alist symb))))
-
-;; 设置时间戳前，确保小时zero padded像07和22而且自己单独一行。
-;; 0700-0750
-;; 再用C-x n s来narrow到subtree。
-(defun org-my-set-timestamp ()
-  (interactive)
-  (while (re-search-forward "^\\([[:digit:]]\\{2\\}\\)\\([[:digit:]]*\\)-\\([[:digit:]]\\{2\\}\\)\\([[:digit:]]*\\)$" nil t)
-    (replace-match
-     (concat "<"
-             (format-time-string
-              "%Y-%m-%d %a "
-              (time-add (current-time) (* 24 3600)))
-             "\\1:\\2>" "--" "<"
-             (format-time-string
-              "%Y-%m-%d %a "
-              (time-add (current-time) (* 24 3600)))
-             "\\3:\\4>"))))
 
 (use-package haskell-ts-mode
   :ensure t)
