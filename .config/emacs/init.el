@@ -1,8 +1,3 @@
-;; add melpa package source
-(require 'package)
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-(package-initialize)
-
 (setq wl-copy-process nil)
 (defun wl-copy (text)
   (setq wl-copy-process
