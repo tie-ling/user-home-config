@@ -1,3 +1,4 @@
+;; add melpa package source
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
@@ -23,49 +24,35 @@
   :custom
   (auto-fill-function 'do-auto-fill t)
   (calendar-week-start-day 1)
-  (custom-enabled-themes '(modus-operandi) nil nil "Customized with use-package custom")
+  (custom-enabled-themes '(modus-operandi) nil nil)
   (default-input-method "pyim")
+  (display-battery-mode t)
+  (display-time-mode t)
+  (electric-pair-mode t)
   (enable-local-variables nil)
+  (indent-tabs-mode nil)
   (inhibit-startup-screen t)
-  (menu-bar-mode nil)
   (mail-envelope-from 'header)
   (mail-specify-envelope-from t)
-  (message-sendmail-envelope-from 'header)
+  (menu-bar-mode nil)
   (message-default-mail-headers "Reply-To: Yuchen Guo <yc@apvc.uk>")
+  (message-sendmail-envelope-from 'header)
   (mode-line-compact 'long)
   (modus-themes-bold-constructs nil)
   (modus-themes-inhibit-reload nil)
   (modus-themes-italic-constructs t)
   (modus-themes-mixed-fonts t)
   (network-security-level 'paranoid)
-  (read-buffer-completion-ignore-case t)
-  (ring-bell-function nil)
-  (scroll-bar-mode nil)
+  (require-final-newline t)
   (send-mail-function 'sendmail-send-it)
   (sendmail-program "msmtp")
   (tab-always-indent 'complete)
   (tool-bar-mode nil)
-  (tramp-mode nil)
   (user-mail-address "yc@apvc.uk"))
 
-(use-package pyim
-  :ensure t)
 (use-package pyim-basedict
-  :ensure t
   :config
   (pyim-basedict-enable))
-
-(use-package elec-pair
-  :custom
-  (electric-pair-mode t))
-
-(use-package battery
-  :custom
-  (display-battery-mode t))
-
-(use-package time
-  :custom
-  (display-time-mode t))
 
 (use-package shr
   :custom
@@ -73,23 +60,7 @@
   (shr-inhibit-images t)
   (shr-use-colors nil))
 
-(use-package files
-  :custom
-  (require-final-newline t))
-
-(use-package minibuffer
-  :custom
-  (read-file-name-completion-ignore-case t))
-
-(use-package simple
-  :custom
-  (indent-tabs-mode nil))
-
-(use-package nix-mode
-  :ensure t)
-
 (use-package notmuch
-  :ensure t
   :custom
   (notmuch-crypto-process-mime nil)
   (notmuch-saved-searches
@@ -102,11 +73,7 @@
      (:name "all mail" :query "*" :key "a")))
   (notmuch-show-logo nil))
 
-(use-package magit
-  :ensure t)
-
 (use-package counsel
-  :ensure t
   :config
   (ivy-mode 1)
   :custom
@@ -114,7 +81,6 @@
   (ivy-count-format "(%d/%d) "))
 
 (use-package ledger-mode
-  :ensure t
   :custom
   ((ledger-binary-path "hledger")
    (ledger-report-use-strict t)
@@ -125,8 +91,9 @@
    (ledger-report-native-highlighting-arguments '("--color=always")))
   :mode ("\\.hledger\\'" "\\.ledger\\'"))
 
-(global-set-key (kbd "C-c a") #'org-agenda)
 (use-package org
+  :bind
+  (("C-c a" . org-agenda))
   :custom
   (org-agenda-inhibit-startup t)
   (org-agenda-window-setup 'only-window)
@@ -169,15 +136,8 @@
                   (if (char-equal c ?<) t
                     (,electric-pair-inhibit-predicate c)))))))
 
-
-(use-package text-mode)
-
 (use-package auctex
   :ensure t)
-
-(use-package sml-mode
-  :ensure t
-  :mode ("\\.sml\\'"))
 
 (use-package ConTeXt-mode
   :mode ("\\.tex\\'")
@@ -286,6 +246,3 @@ char."
                ("\\mathbb{C}" . ?ℂ)
                ("\\mathbb{K}" . ?𝕂)))
       (add-to-list 'tex--prettify-symbols-alist symb))))
-
-(use-package haskell-ts-mode
-  :ensure t)
