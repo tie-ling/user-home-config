@@ -128,6 +128,7 @@
 (global-set-key (kbd "C-c a") #'org-agenda)
 (use-package org
   :custom
+  (org-agenda-inhibit-startup t)
   (org-startup-folded t)
   (org-agenda-window-setup 'only-window)
   (org-agenda-start-with-log-mode nil)
