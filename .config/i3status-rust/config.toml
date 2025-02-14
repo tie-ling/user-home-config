@@ -22,16 +22,6 @@ format = " $icon $1m.eng(w:4) "
 interval = 1
 
 [[block]]
-block = "notmuch"
-query = "tag:unread"
-maildir = "~/Mail/"
-threshold_warning = 1
-threshold_critical = 10
-[[block.click]]
-button = "left"
-update = true
-
-[[block]]
 block = "backlight"
 device = "intel_backlight"
 missing_format = ""
