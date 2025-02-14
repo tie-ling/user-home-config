@@ -21,8 +21,6 @@
   (calendar-week-start-day 1)
   (custom-enabled-themes '(modus-operandi) nil nil)
   (default-input-method "pyim")
-  (display-battery-mode t)
-  (display-time-mode t)
   (electric-pair-mode t)
   (enable-local-variables nil)
   (indent-tabs-mode nil)
@@ -32,7 +30,6 @@
   (menu-bar-mode nil)
   (message-default-mail-headers "Reply-To: Yuchen Guo <yc@apvc.uk>")
   (message-sendmail-envelope-from 'header)
-  (mode-line-compact 'long)
   (modus-themes-bold-constructs nil)
   (modus-themes-inhibit-reload nil)
   (modus-themes-italic-constructs t)
@@ -130,6 +127,9 @@
                    `(lambda (c)
                   (if (char-equal c ?<) t
                     (,electric-pair-inhibit-predicate c)))))))
+
+(use-package haskell-ts-mode
+  :mode ("\\.hs\\'"))
 
 (use-package auctex
   :ensure t)
