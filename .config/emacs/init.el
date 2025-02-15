@@ -134,32 +134,23 @@
 (use-package auctex
   :ensure t)
 
-(use-package ConTeXt-mode
+(use-package LaTeX-mode
   :mode ("\\.tex\\'")
   :hook
-  ((ConTeXt-mode . turn-on-reftex)
+  ((LaTeX-mode . turn-on-reftex)
 
    ;; show \alpha as α and \mathbb{R} as ℝ
-   (ConTeXt-mode . prettify-symbols-mode)
+   (LaTeX-mode . prettify-symbols-mode)
 
    ;; shortcuts for symbols
-   (ConTeXt-mode . LaTeX-math-mode))
+   (LaTeX-mode . LaTeX-math-mode))
 
   :custom
-  ;; AUCTeX defaults to mkii; change to iv for iv and lmtx
-  (ConTeXt-Mark-version "IV")
-
   ;; Enable electric left right brace
   (LaTeX-electric-left-right-brace t)
 
   ;; Do not unprettify symbol at point
   (prettify-symbols-unprettify-at-point nil)
-
-  ;; Let AUCTeX properly detect formula environment as math mode
-  (texmathp-tex-commands
-   '(("\\startformula" sw-on)
-     ("\\stopformula" sw-off)
-     ("\\m" arg-on)))
 
   ;; Set PDF viewer
   (TeX-view-program-selection '((output-pdf "Zathura")))
@@ -176,7 +167,7 @@
   (TeX-debug-warnings t)
 
   ;; Electric inline math, 
-  (TeX-electric-math '("\\m{" . "}"))
+  (TeX-electric-math '("\\(" . "\\)"))
 
   ;; Electric sub and superscript, inserts {} after ^ and _
   ;; such as a^{}.
@@ -196,13 +187,6 @@
      ("o n" "mathbb{N}" nil nil)
      (?= "coloneq" nil nil)
      ("o c" "mathbb{C}" nil nil)))
-
-  :bind
-  ;; Electric \left(\right) \left[\right] \left\{\right\}
-  ;; only left brace; there is no right electric brace function
-  (:map ConTeXt-mode-map ("(" . LaTeX-insert-left-brace))
-  (:map ConTeXt-mode-map ("[" . LaTeX-insert-left-brace))
-  (:map ConTeXt-mode-map ("{" . LaTeX-insert-left-brace))
 
   :config
   (add-hook 'TeX-after-compilation-finished-functions
@@ -241,16 +225,3 @@ char."
                ("\\mathbb{C}" . ?ℂ)
                ("\\mathbb{K}" . ?𝕂)))
       (add-to-list 'tex--prettify-symbols-alist symb))))
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   '(auctex sml-mode pyim-basedict notmuch nix-mode magit ledger-mode haskell-ts-mode counsel)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
