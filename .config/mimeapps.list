@@ -16,6 +16,11 @@ text/x-chdr=emacsclient-terminal.desktop
 text/x-java=emacsclient-terminal.desktop
 text/x-maven+xml=emacsclient-terminal.desktop
 application/vnd.openxmlformats-officedocument.wordprocessingml.document=abiword.desktop
+text/html=chromium-browser.desktop
+x-scheme-handler/http=chromium-browser.desktop
+x-scheme-handler/https=chromium-browser.desktop
+x-scheme-handler/about=chromium-browser.desktop
+x-scheme-handler/unknown=chromium-browser.desktop
 
 [Added Associations]
 application/pdf=org.pwmt.zathura.desktop;
