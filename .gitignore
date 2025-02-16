@@ -24,3 +24,4 @@ sys-conf
 .texlive*
 /.org-timestamps/
 /orgpub/
+/.unison/
