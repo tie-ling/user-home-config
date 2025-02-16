@@ -217,6 +217,7 @@ font sans-serif 9
 bar {
     font monospace
     position bottom
+    mode hide
     status_command i3status-rs
     colors {
         separator #666666
