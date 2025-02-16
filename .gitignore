@@ -22,3 +22,5 @@ sys-conf
 .ssh/known_hosts.old
 .w3m/w3m*
 .texlive*
+/.org-timestamps/
+/orgpub/
