@@ -122,7 +122,6 @@
   (org-agenda-span 'day)
   (org-display-custom-times nil)
   (org-time-stamp-custom-formats '("%m-%d" . "%H:%M"))
-  (org-latex-compiler "lualatex")
   (org-export-initial-scope 'buffer)
   (org-modules
    '(ol-bbdb ol-bibtex ol-doi ol-eww ol-info ol-irc ol-mhe ol-rmail org-tempo))
@@ -210,15 +209,6 @@
   :config
   (add-hook 'TeX-after-compilation-finished-functions
             #'TeX-revert-document-buffer)
-
-  ;; in context mode, override auctex function for inserting mathcal
-  (defun LaTeX-math-cal (char dollar)
-      "Insert a {\\cal CHAR}.  If DOLLAR is non-nil, put $'s around it.
-If `TeX-electric-math' is non-nil wrap that symbols around the
-char."
-      (interactive "*c\nP")
-      (insert "\\mathcal{" (char-to-string char) "}"))
-
 
   (defun LaTeX-math-bf (char dollar)
       "Insert a {\\cal CHAR}.  If DOLLAR is non-nil, put $'s around it.
