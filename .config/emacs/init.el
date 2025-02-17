@@ -74,14 +74,9 @@
 
 (use-package ledger-mode
   :custom
-  ((ledger-binary-path "hledger")
-   (ledger-report-use-strict t)
-   (ledger-mode-should-check-version nil)
-   (ledger-report-auto-width nil)
-   (ledger-report-links-in-register nil)
-   (ledger-default-date-string "%Y-%m-%d")
-   (ledger-report-native-highlighting-arguments '("--color=always")))
-  :mode ("\\.hledger\\'" "\\.ledger\\'"))
+  ((ledger-report-use-strict t)
+   (ledger-default-date-string "%Y-%m-%d"))
+  :mode ("\\.ledger\\'"))
 
 (use-package org
   :bind
