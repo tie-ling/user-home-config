@@ -74,7 +74,8 @@
 
 (use-package ledger-mode
   :custom
-  ((ledger-report-use-strict t))
+  ((ledger-report-use-strict t)
+   (ledger-default-date-string "%Y-%m-%d"))
   :mode ("\\.ledger\\'"))
 
 (use-package org
