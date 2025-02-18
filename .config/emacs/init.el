@@ -20,6 +20,8 @@
   (auto-fill-function 'do-auto-fill t)
   (calendar-week-start-day 1)
   (custom-enabled-themes '(modus-operandi) nil nil)
+  (display-time-mode t)
+  (display-battery-mode t)
   (default-input-method "pyim")
   (electric-pair-mode t)
   (enable-local-variables nil)
