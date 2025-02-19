@@ -308,9 +308,7 @@ bindsym $mod+f10 exec grim
 
 bindsym $mod+Shift+l exec systemctl suspend
 
-exec systemctl --user start emacs
-exec dconf write /org/gnome/desktop/interface/enable-animations false
-exec dconf write /org/gnome/desktop/interface/gtk-key-theme 'Emacs'
+exec dconf load / < $HOME/.config/yc-dconf
 
 
 exec wl-gammarelay-rs
