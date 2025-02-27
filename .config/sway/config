@@ -73,7 +73,7 @@ set $right f
     bindsym $mod+Return exec $term attach-session
     bindsym $mod+o exec $term new emacsclient --create-frame
     bindsym $mod+m exec $term new mc
-    bindsym $mod+i exec chromium-browser
+    bindsym $mod+i exec firefox
 
     # Kill focused window
     bindsym $mod+k kill
