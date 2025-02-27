@@ -1,7 +1,7 @@
 [Desktop Entry]
 Version=1.0
 Name=yc ebay
-Exec=chromium --user-data-dir=/home/yc/.config/chromium-ebay
+Exec=firefox -P ebay
 StartupNotify=true
 Terminal=false
 Type=Application

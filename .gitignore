@@ -26,3 +26,4 @@ sys-conf
 /orgpub/
 /.unison/
 .m2
+.mozilla/
