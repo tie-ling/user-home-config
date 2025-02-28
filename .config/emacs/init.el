@@ -67,12 +67,9 @@
      (:name "all mail" :query "*" :key "a")))
   (notmuch-show-logo nil))
 
-(use-package counsel
-  :config
-  (ivy-mode 1)
+(use-package vertico
   :custom
-  (ivy-use-virtual-buffers t)
-  (ivy-count-format "(%d/%d) "))
+  (vertico-mode t))
 
 (use-package ledger-mode
   :custom
