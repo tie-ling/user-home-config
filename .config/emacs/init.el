@@ -25,6 +25,7 @@
   (default-input-method "pyim")
   (electric-pair-mode t)
   (enable-local-variables nil)
+  (enable-recursive-minibuffers t)
   (indent-tabs-mode nil)
   (inhibit-startup-screen t)
   (mail-envelope-from 'header)
