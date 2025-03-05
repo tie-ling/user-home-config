@@ -144,6 +144,10 @@
 (use-package haskell-ts-mode
   :mode ("\\.hs\\'"))
 
+(use-package nix-ts-mode
+  :mode ("\\.nix\\'"))
+
+
 (use-package auctex
   :ensure t)
 
