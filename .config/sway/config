@@ -317,4 +317,4 @@ bindsym $mod+Control+Underscore exec busctl --user set-property rs.wl-gammarelay
 
 
 # 16:10 ratio of tablet working area
-input 9580:110:PenTablet_Pen  map_to_region 320 0 1600 1000
+input 9580:110:PenTablet_Pen  map_to_region 0 0 1920 1200
