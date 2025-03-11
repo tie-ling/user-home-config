@@ -4,9 +4,9 @@
 
 (use-package emacs
   :custom
-  (xterm-mouse-mode nil)
   (auto-fill-function 'do-auto-fill t)
   (calendar-week-start-day 1)
+  (completion-ignore-case t)
   (custom-enabled-themes '(modus-vivendi) nil nil)
   (display-battery-mode nil)
   (display-time-mode nil)
@@ -25,12 +25,15 @@
   (modus-themes-italic-constructs t)
   (modus-themes-mixed-fonts t)
   (network-security-level 'paranoid)
+  (read-buffer-completion-ignore-case t)
+  (read-file-name-completion-ignore-case t)
   (require-final-newline t)
   (send-mail-function 'sendmail-send-it)
   (sendmail-program "msmtp")
   (tab-always-indent 'complete)
   (tool-bar-mode nil)
-  (user-mail-address "yc@apvc.uk"))
+  (user-mail-address "yc@apvc.uk")
+  (xterm-mouse-mode nil))
 
 (use-package vertico
   :ensure t
