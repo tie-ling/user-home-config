@@ -71,6 +71,10 @@
      (:name "all mail" :query "*" :key "a")))
   (notmuch-show-logo nil))
 
+(use-package savehist
+  :init
+  (savehist-mode))
+
 (use-package vertico
   :custom
   (vertico-mode t))

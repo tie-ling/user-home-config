@@ -35,6 +35,10 @@
   (user-mail-address "yc@apvc.uk")
   (xterm-mouse-mode nil))
 
+(use-package savehist
+  :init
+  (savehist-mode))
+
 (use-package vertico
   :ensure t
   :custom
