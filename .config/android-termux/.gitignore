@@ -1,0 +1,13 @@
+Documents
+*~
+.termux/colors.properties
+.bash_history
+.cache
+.config
+.local
+.nix*
+.ssh/id_ed25519
+/storage/
+/Projects/
+/.lesshst
+.w3m/
