@@ -49,7 +49,8 @@
 
 (use-package org
   :bind
-  (("C-c a" . org-agenda))
+  (("C-c a" . org-agenda)
+   ("C-c r" . org-shiftright))
   :custom
   (org-agenda-inhibit-startup t)
   (org-agenda-window-setup 'only-window)
