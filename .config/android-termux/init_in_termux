@@ -1,0 +1,19 @@
+download termux from
+https://sourceforge.net/projects/android-ports-for-gnu-emacs/files/termux
+
+# choose a repo
+termux-change-repo
+
+# clone home
+git clone git@github.com:tie-ling/user-home-config
+
+# set ssh key password to empty
+ssh-keygen -p -f user-home-config/.ssh/id_ed25519
+
+# link config
+xargs -I{} ln -s user-home-config/.config/android-termux/{} ./{} < user-home-config/.config/android-termux/git-ls 
+
+# install packages
+# see .config/termux-install.txt
+
+# clone user-Projects

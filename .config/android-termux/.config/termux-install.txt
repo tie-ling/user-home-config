@@ -1,3 +1,3 @@
-Commandline: apt install git openssh emacs ledger
+Commandline: apt install git openssh emacs
 Commandline: apt install man
-Commandline: apt install w3m tmux
+Commandline: apt install w3m
