@@ -11,7 +11,7 @@ xwayland disable
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
 # Your preferred terminal emulator
-set $term foot tmux
+set $term foot
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -70,9 +70,9 @@ set $right f
 # Basics:
 #
     # Start a terminal
-    bindsym $mod+Return exec $term attach-session
+    bindsym $mod+Return exec $term
     bindsym $mod+o exec emacsclient --create-frame
-    bindsym $mod+m exec $term new mc
+    bindsym $mod+m exec $term mc
     bindsym $mod+i exec firefox
 
     # Kill focused window
