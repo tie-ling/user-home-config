@@ -1,20 +1,3 @@
-(setq wl-copy-process nil)
-(defun wl-copy (text)
-  (setq wl-copy-process
-        (make-process
-         :name "wl-copy"
-         :buffer nil
-         :command '("wl-copy" "-f" "-n")
-         :connection-type 'pipe))
-  (process-send-string wl-copy-process text)
-  (process-send-eof wl-copy-process))
-(defun wl-paste ()
-  (if (and wl-copy-process (process-live-p wl-copy-process))
-      nil ; should return nil if we're the current paste owner
-    (shell-command-to-string "wl-paste -n")))
-(setq interprogram-cut-function 'wl-copy)
-(setq interprogram-paste-function 'wl-paste)
-
 (use-package emacs
   :custom
   (auto-fill-function 'do-auto-fill t)
@@ -44,6 +27,7 @@
   (send-mail-function 'sendmail-send-it)
   (sendmail-program "msmtp")
   (tab-always-indent 'complete)
+  (tool-bar-mode nil)
   (user-mail-address "yc@apvc.uk"))
 
 (use-package pyim-basedict
