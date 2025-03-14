@@ -31,7 +31,6 @@
   (inhibit-startup-screen t)
   (mail-envelope-from 'header)
   (mail-specify-envelope-from t)
-  (menu-bar-mode nil)
   (message-default-mail-headers "Reply-To: Yuchen Guo <yc@apvc.uk>")
   (message-sendmail-envelope-from 'header)
   (modus-themes-bold-constructs nil)
@@ -45,7 +44,6 @@
   (send-mail-function 'sendmail-send-it)
   (sendmail-program "msmtp")
   (tab-always-indent 'complete)
-  (tool-bar-mode nil)
   (user-mail-address "yc@apvc.uk"))
 
 (use-package pyim-basedict
