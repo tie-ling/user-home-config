@@ -7,13 +7,31 @@ termux-change-repo
 # clone home
 git clone git@github.com:tie-ling/user-home-config
 
-# set ssh key password to empty
-ssh-keygen -p -f user-home-config/.ssh/id_ed25519
 
 # link config
 xargs -I{} ln -s user-home-config/.config/android-termux/{} ./{} < user-home-config/.config/android-termux/git-ls 
 
+# set ssh key password to empty
+cp  .ssh/ssh-encrypted .ssh/id_ed25519
+ssh-keygen -p -f .ssh/id_ed25519
+chmod u=rw,go= .ssh/id_ed25519
+
 # install packages
 # see .config/termux-install.txt
 
+# set new remote
+git -C user-home-config remote rm origin
+git -C user-home-config remote add origin git@github.com:tie-ling/user-home-config
+
 # clone user-Projects
+git clone git@github.com:tie-ling/user-projects Projects
+
+# go to emacs M-x shell, then link to termux:
+ln -s ./Projects 
+
+# emacs init file can not be symblinked, copy instead
+
+rm .emacs
+
+cp  /data/data/com.termux/files/home/user-home-config/.config/android-termux/.config/emacs/init.el ~/.emacs
+cp  /data/data/com.termux/files/home/user-home-config/.config/android-termux/.config/emacs/early-init.el ~/.emacs.d/
