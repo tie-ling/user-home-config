@@ -1,12 +1,34 @@
 download termux from
 https://sourceforge.net/projects/android-ports-for-gnu-emacs/files/termux
 
+Next, install Termux _first_, then install Emacs.  Once
+both packages are installed, open Termux, and at the shell prompt
+displayed therein, type:
+
+  $ pkg update && pkg upgrade
+
+confirming each of the inquiries made by the dpkg package manager.
+
 # choose a repo
 termux-change-repo
 
-# clone home
-git clone git@github.com:tie-ling/user-home-config
+# install git and openssh immediately
+# too hard on the eyes to run commands on small screeen
 
+pkg install git openssh
+
+# scan public key as qr code and paste:
+
+nano .ssh/authorized_keys
+
+# start ssh
+sshd
+
+# see ip
+ifconfig
+
+# clone home
+git clone https://github.com/tie-ling/user-home-config
 
 # link config
 xargs -I{} ln -s user-home-config/.config/android-termux/{} ./{} < user-home-config/.config/android-termux/git-ls 
