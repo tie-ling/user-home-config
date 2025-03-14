@@ -26,6 +26,7 @@
   (require-final-newline t)
   (send-mail-function 'sendmail-send-it)
   (sendmail-program "msmtp")
+  (scroll-bar-mode nil)
   (tab-always-indent 'complete)
   (tool-bar-mode nil)
   (user-mail-address "yc@apvc.uk"))
