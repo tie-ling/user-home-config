@@ -31,15 +31,17 @@ ifconfig
 git clone https://github.com/tie-ling/user-home-config
 
 # link config
+rm -rf .ssh
 xargs -I{} ln -s user-home-config/.config/android-termux/{} ./{} < user-home-config/.config/android-termux/git-ls 
 
 # set ssh key password to empty
 cp  .ssh/ssh-encrypted .ssh/id_ed25519
-ssh-keygen -p -f .ssh/id_ed25519
 chmod u=rw,go= .ssh/id_ed25519
+ssh-keygen -p -f .ssh/id_ed25519
 
-# install packages
-# see .config/termux-install.txt
+
+# set git identity
+cp user-home-config/.gitconfig ~/
 
 # set new remote
 git -C user-home-config remote rm origin
@@ -49,11 +51,9 @@ git -C user-home-config remote add origin git@github.com:tie-ling/user-home-conf
 git clone git@github.com:tie-ling/user-projects Projects
 
 # go to emacs M-x shell, then link to termux:
-ln -s ./Projects 
+cd /data/data/org.gnu.emacs/files/
 
-# emacs init file can not be symblinked, copy instead
+ln -s /data/data/com.termux/files/home/Projects  ./Projects
+ln -s /data/data/com.termux/files/home/user-home-config/.config/android-termux/.config/emacs/init.el .emacs
+cp  /data/data/com.termux/files/home/user-home-config/.config/android-termux/.config/emacs/early-init.el .emacs.d/
 
-rm .emacs
-
-cp  /data/data/com.termux/files/home/user-home-config/.config/android-termux/.config/emacs/init.el ~/.emacs
-cp  /data/data/com.termux/files/home/user-home-config/.config/android-termux/.config/emacs/early-init.el ~/.emacs.d/
