@@ -1,5 +1,17 @@
+(custom-set-faces
+ '(default ((t (:height 180 :family "Droid Sans Mono")))))
+
 (use-package emacs
   :custom
+  (face-font-family-alternatives
+   '(("Droid Sans Mono" "Noto Sans Mono CJK SC")
+     ("Monospace" "Cascadia Code" "Lucida Console" "courier" "fixed")
+     ("Monospace Serif" "Courier 10 Pitch" "Consolas" "Courier Std"
+      "FreeMono" "Nimbus Mono L" "courier" "fixed")
+     ("courier" "CMU Typewriter Text" "fixed")
+     ("Sans Serif" "Calibri" "Tahoma" "Lucida Sans Unicode" "helv"
+      "helvetica" "arial" "fixed")
+     ("helv" "helvetica" "arial" "fixed")))
   (auto-fill-function 'do-auto-fill t)
   (calendar-week-start-day 1)
   (completion-ignore-case t)
@@ -42,6 +54,14 @@
 
 (use-package magit
   :ensure t)
+
+(use-package pyim
+  :ensure t)
+
+(use-package pyim-basedict
+  :ensure t
+  :config
+  (pyim-basedict-enable))
 
 (use-package org
   :bind
