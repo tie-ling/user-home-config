@@ -3,12 +3,12 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:height 100 :family "Droid Sans Mono")))))
-
-(setq overriding-text-conversion-style nil)
+ '(default ((t (:height 140 :family "Droid Sans Mono"))))
+ '(menu ((t (:background "#1e1e1e" :foreground "#ffffff" :height 0.6)))))
 
 (use-package emacs
   :custom
+  (touch-screen-display-keyboard t)
   (face-font-family-alternatives
    '(("Droid Sans Mono" "Noto Sans Mono CJK SC")
      ("Monospace" "Cascadia Code" "Lucida Console" "courier" "fixed")
@@ -111,4 +111,4 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages nil))
+ )
