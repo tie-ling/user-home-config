@@ -3,9 +3,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:height 150 :family "Droid Sans Mono"))))
- '(menu ((t (:background "#1e1e1e" :foreground "#ffffff" :height 0.6))))
- '(mode-line ((t (:inherit modus-themes-ui-variable-pitch :background "#505050" :foreground "#ffffff" :box (:line-width (1 . 1) :color "#959595") :height 0.6)))))
+ '(default ((t (:height 220 :family "JuliaMono"))))
+ '(menu ((t (:height 1))))
+ '(mode-line ((t (:height 1)))))
 
 (use-package emacs
   :bind
@@ -29,7 +29,7 @@
   :custom
   (touch-screen-display-keyboard t)
   (face-font-family-alternatives
-   '(("Droid Sans Mono" "Noto Sans Mono CJK SC")
+   '(("JuliaMono" "Noto Sans Mono CJK SC")
      ("Monospace" "Cascadia Code" "Lucida Console" "courier" "fixed")
      ("Monospace Serif" "Courier 10 Pitch" "Consolas" "Courier Std"
       "FreeMono" "Nimbus Mono L" "courier" "fixed")

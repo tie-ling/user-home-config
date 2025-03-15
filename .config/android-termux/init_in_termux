@@ -57,3 +57,6 @@ ln -s /data/data/com.termux/files/home/Projects  ./Projects
 ln -s /data/data/com.termux/files/home/user-home-config/.config/android-termux/.config/emacs/init.el .emacs
 cp  /data/data/com.termux/files/home/user-home-config/.config/android-termux/.config/emacs/early-init.el .emacs.d/
 
+# install noto cjk and juliamono to ~/fonts
+https://github.com/notofonts/noto-cjk/tree/main/Sans#downloading-noto-sans-cjk
+https://github.com/cormullion/juliamono/releases
