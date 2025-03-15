@@ -3,9 +3,14 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:height 220 :family "Droid Sans Mono")))))
+ '(default ((t (:height 150 :family "Droid Sans Mono"))))
+ '(menu ((t (:background "#1e1e1e" :foreground "#ffffff" :height 0.6))))
+ '(mode-line ((t (:inherit modus-themes-ui-variable-pitch :background "#505050" :foreground "#ffffff" :box (:line-width (1 . 1) :color "#959595") :height 0.6)))))
 
 (use-package emacs
+  :bind
+  (("<volume-up>" . previous-line)
+   ("<volume-down>" . next-line))
   :custom
   (touch-screen-display-keyboard t)
   (face-font-family-alternatives
@@ -29,7 +34,7 @@
   (inhibit-startup-screen t)
   (mail-envelope-from 'header)
   (mail-specify-envelope-from t)
-  (menu-bar-mode nil)
+  (menu-bar-mode t)
   (message-default-mail-headers "Reply-To: Yuchen Guo <yc@apvc.uk>")
   (message-sendmail-envelope-from 'header)
   (mode-line-compact 'long)
