@@ -18,6 +18,8 @@
   (easy-menu-define my-menu global-map
     "My Customized Menu for using Emacs on Android."
     '("My"
+      ("File"
+       ["Save buffers" save-some-buffers])
       ("Org"
        ["Agenda List" org-agenda-list]
        ["Global TODO List" org-todo-list]
