@@ -11,6 +11,19 @@
   :bind
   (("<volume-up>" . previous-line)
    ("<volume-down>" . next-line))
+  :config
+  ;; See (info "(elisp) Easy Menu")
+  ;; remove menu-bar-tools; to be redefined
+  (define-key global-map [menu-bar tools] nil t)
+  (easy-menu-define my-menu global-map
+    "My Customized Menu for using Emacs on Android."
+    '("My"
+      ("Org"
+       ["Agenda List" org-agenda-list]
+       ["Global TODO List" org-todo-list]
+       ["Search for Keywords" org-search-view])
+      ("Magit"
+       ["Status" magit-status])))
   :custom
   (touch-screen-display-keyboard t)
   (face-font-family-alternatives
