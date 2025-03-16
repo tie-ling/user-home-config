@@ -18,6 +18,9 @@
   (easy-menu-define my-menu global-map
     "My Customized Menu for using Emacs on Android."
     '("My"
+      ("Window"
+       ["New below" split-window-below]
+       ["Remove other" delete-other-windows])
       ("File"
        ["Save buffers" save-some-buffers])
       ("Org"
