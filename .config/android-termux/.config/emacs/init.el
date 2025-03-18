@@ -4,20 +4,25 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:height 120 :family "JuliaMono"))))
- '(menu ((t (:height 1))))
- '(mode-line ((t (:height 1)))))
+ '(menu ((t (:height 0.75))))
+ '(mode-line ((t (:height 0.75)))))
 
 (use-package emacs
   :bind
-  (("<volume-up>" . previous-line)
-   ("<volume-down>" . next-line))
+  (("<volume-up>" . scroll-down-command)
+   ("<volume-down>" . scroll-up-command))
   :config
   ;; See (info "(elisp) Easy Menu")
   ;; remove menu-bar-tools; to be redefined
   (define-key global-map [menu-bar tools] nil t)
   (easy-menu-define my-menu global-map
-    "My Customized Menu for using Emacs on Android."
+    "My Customized Menu for using E<2025-03-18 Wed 19:00>
+macs on Android."
     '("My"
+      ("Line Wrapping"
+       ["Visual fill" visual-fill-mode]
+       ["Visual line" visual-line-mode]
+       ["Adaptive wrap prefix" adaptive-wrap-prefix-mode])
       ("Window"
        ["New below" split-window-below]
        ["Remove other" delete-other-windows])
@@ -72,6 +77,12 @@
   (modifier-bar-mode t)
   (user-mail-address "yc@apvc.uk")
   (xterm-mouse-mode nil))
+
+(use-package visual-fill
+  :ensure t)
+
+(use-package adaptive-wrap
+  :ensure t)
 
 (use-package savehist
   :init
@@ -135,4 +146,4 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(package-selected-packages '(adaptive-wrap magit pyim-basedict vertico visual-fill)))
