@@ -183,6 +183,8 @@
   ;; RefTex
   (reftex-plug-into-AUCTeX t)
 
+  (TeX-engine 'luatex)
+
   ;; Customize keyboard shortcuts for TeX math macros
   (LaTeX-math-list
    '(("o r" "mathbb{R}" nil nil)
