@@ -75,6 +75,7 @@ macs on Android."
   (tool-bar-mode t)
   (tool-bar-position 'bottom)
   (modifier-bar-mode t)
+  (visible-bell t)
   (user-mail-address "yc@apvc.uk")
   (xterm-mouse-mode nil))
 
