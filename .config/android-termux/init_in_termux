@@ -60,3 +60,9 @@ cp  /data/data/com.termux/files/home/user-home-config/.config/android-termux/.co
 # install noto cjk and juliamono to ~/fonts
 https://github.com/notofonts/noto-cjk/tree/main/Sans#downloading-noto-sans-cjk
 https://github.com/cormullion/juliamono/releases
+
+mkdir fonts
+cd fonts
+curl -LO https://github.com/googlefonts/noto-cjk/raw/main/Sans/Variable/TTF/Mono/NotoSansMonoCJKsc-VF.ttf
+curl -LO https://github.com/cormullion/juliamono/releases/download/v0.059/JuliaMono-ttf.tar.gz
+tar axf JuliaMono-ttf.tar.gz
