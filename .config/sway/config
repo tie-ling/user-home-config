@@ -4,7 +4,8 @@
 #
 # Read `man 5 sway` for a complete reference.
 
-xwayland disable
+# for vmware horizon client
+xwayland enable
 
 ### Variables
 #
@@ -313,7 +314,7 @@ exec dconf load / < $HOME/.config/yc-dconf
 
 exec wl-gammarelay-rs
 bindsym $mod+Control+0          exec busctl --user set-property rs.wl-gammarelay / rs.wl.gammarelay Brightness d 1
-bindsym $mod+Control+Underscore exec busctl --user set-property rs.wl-gammarelay /outputs/DP_3 rs.wl.gammarelay Brightness d 0.5
+bindsym $mod+Control+Underscore exec busctl --user set-property rs.wl-gammarelay /outputs/DP_1 rs.wl.gammarelay Brightness d 0.5
 
 
 # 16:10 ratio of tablet working area
