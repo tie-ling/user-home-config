@@ -27,3 +27,5 @@ sys-conf
 /.unison/
 .m2
 .mozilla/
+.vmware
+vmware-yc/
