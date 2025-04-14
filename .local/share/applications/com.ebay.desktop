@@ -5,3 +5,4 @@ Exec=firefox -P ebay
 StartupNotify=true
 Terminal=false
 Type=Application
+MimeType=
