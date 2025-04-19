@@ -92,7 +92,7 @@
       :with-toc nil
       :auto-sitemap t)))
   (org-agenda-inhibit-startup t)
-  (org-agenda-window-setup 'only-window)
+  (org-agenda-window-setup 'current-window)
   (org-agenda-start-with-log-mode nil)
   (org-clock-mode-line-total 'current)
   (org-agenda-prefix-format
@@ -100,9 +100,7 @@
      (todo . " %i %-12:c")
      (tags . " %i %-12:c")
      (search . " %i %-12:c")))
-  (org-agenda-files '("~/Projects/orgmode/agenda/logbook/"
-                      "~/Projects/orgmode/agenda/schedule/"
-                      "~/Projects/orgmode/agenda/todo/"))
+  (org-agenda-files '("~/Projects/orgmode/agenda/agenda.org"))
   (org-directory '("~/Projects/orgmode"))
   (org-agenda-span 'day)
   (org-display-custom-times nil)
