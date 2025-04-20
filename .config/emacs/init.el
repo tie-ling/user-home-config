@@ -139,23 +139,32 @@
 (use-package auctex
   :ensure t)
 
-(use-package LaTeX-mode
+(use-package ConTeXt-mode
   :mode ("\\.tex\\'")
   :hook
-  ((LaTeX-mode . turn-on-reftex)
+  ((ConTeXt-mode . turn-on-reftex)
 
    ;; show \alpha as α and \mathbb{R} as ℝ
-   (LaTeX-mode . prettify-symbols-mode)
+   (ConTeXt-mode . prettify-symbols-mode)
 
    ;; shortcuts for symbols
-   (LaTeX-mode . LaTeX-math-mode))
+   (ConTeXt-mode . LaTeX-math-mode))
 
   :custom
+  ;; AUCTeX defaults to mkii; change to iv for iv and lmtx
+  (ConTeXt-Mark-version "IV")
+
   ;; Enable electric left right brace
   (LaTeX-electric-left-right-brace t)
 
   ;; Do not unprettify symbol at point
   (prettify-symbols-unprettify-at-point nil)
+
+  ;; Let AUCTeX properly detect formula environment as math mode
+  (texmathp-tex-commands
+   '(("\\startformula" sw-on)
+     ("\\stopformula" sw-off)
+     ("\\m" arg-on)))
 
   ;; Set PDF viewer
   (TeX-view-program-selection '((output-pdf "Zathura")))
@@ -172,7 +181,7 @@
   (TeX-debug-warnings t)
 
   ;; Electric inline math, 
-  (TeX-electric-math '("\\(" . "\\)"))
+  (TeX-electric-math '("\\m{" . "}"))
 
   ;; Electric sub and superscript, inserts {} after ^ and _
   ;; such as a^{}.
@@ -180,8 +189,6 @@
 
   ;; RefTex
   (reftex-plug-into-AUCTeX t)
-
-  (TeX-engine 'luatex)
 
   ;; Customize keyboard shortcuts for TeX math macros
   (LaTeX-math-list
@@ -195,9 +202,25 @@
      (?= "coloneq" nil nil)
      ("o c" "mathbb{C}" nil nil)))
 
+  :bind
+  ;; Electric \left(\right) \left[\right] \left\{\right\}
+  ;; only left brace; there is no right electric brace function
+  (:map ConTeXt-mode-map ("(" . LaTeX-insert-left-brace))
+  (:map ConTeXt-mode-map ("[" . LaTeX-insert-left-brace))
+  (:map ConTeXt-mode-map ("{" . LaTeX-insert-left-brace))
+
   :config
   (add-hook 'TeX-after-compilation-finished-functions
             #'TeX-revert-document-buffer)
+
+  ;; in context mode, override auctex function for inserting mathcal
+  (defun LaTeX-math-cal (char dollar)
+      "Insert a {\\cal CHAR}.  If DOLLAR is non-nil, put $'s around it.
+If `TeX-electric-math' is non-nil wrap that symbols around the
+char."
+      (interactive "*c\nP")
+      (insert "\\mathcal{" (char-to-string char) "}"))
+
 
   (defun LaTeX-math-bf (char dollar)
       "Insert a {\\cal CHAR}.  If DOLLAR is non-nil, put $'s around it.
