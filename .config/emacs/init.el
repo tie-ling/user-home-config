@@ -100,7 +100,7 @@
      (todo . " %i %-12:c")
      (tags . " %i %-12:c")
      (search . " %i %-12:c")))
-  (org-agenda-files '("~/Projects/orgmode/agenda/agenda.org"))
+  (org-agenda-files '("~/Projects/agenda/agenda.org"))
   (org-directory '("~/Projects/orgmode"))
   (org-agenda-span 'day)
   (org-display-custom-times nil)
