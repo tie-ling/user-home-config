@@ -1,6 +1,0 @@
-# Unison preferences
-root = /home/yc/orgpub
-root = ssh://yc@vps//www
-sshargs = -C
-
-ignore = Name {,.}*{.html~}
