@@ -24,6 +24,9 @@ nano .ssh/authorized_keys
 # start ssh
 sshd
 
+# aquire wakelock
+go to notification , termux, aquire wakelock
+
 # see ip
 ifconfig
 
@@ -55,6 +58,7 @@ cd /data/data/org.gnu.emacs/files/
 
 ln -s /data/data/com.termux/files/home/Projects  ./Projects
 ln -s /data/data/com.termux/files/home/user-home-config/.config/android-termux/.config/emacs/init.el .emacs
+mkdir .emacs.d
 cp  /data/data/com.termux/files/home/user-home-config/.config/android-termux/.config/emacs/early-init.el .emacs.d/
 
 # install noto cjk and juliamono to ~/fonts

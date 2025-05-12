@@ -1,3 +1,7 @@
 https://f-droid.org/en/packages/eu.siacs.conversations/
 
 https://mirrors.tuna.tsinghua.edu.cn/fdroid/repo/eu.siacs.conversations_4213104.apk
+
+disable power management
+disable omemo encryption
+configure ringtone for video calls
