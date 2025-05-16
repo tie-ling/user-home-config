@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (use-package emacs
   :custom
   (auto-fill-function 'do-auto-fill t)
