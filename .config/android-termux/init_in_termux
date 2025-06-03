@@ -1,24 +1,14 @@
-download termux from
-https://sourceforge.net/projects/android-ports-for-gnu-emacs/files/termux
-
-Next, install Termux _first_, then install Emacs.  Once
-both packages are installed, open Termux, and at the shell prompt
-displayed therein, type:
-
-  $ pkg update && pkg upgrade
-
-confirming each of the inquiries made by the dpkg package manager.
-
 # choose a repo
 termux-change-repo
 
 # install git and openssh immediately
 # too hard on the eyes to run commands on small screeen
 
-pkg install git openssh
+pkg install git openssh emacs
 
 # scan public key as qr code and paste:
 
+qrencode -t ansiutf8 < .ssh/id_ed25519.pub
 nano .ssh/authorized_keys
 
 # start ssh
@@ -52,21 +42,3 @@ git -C user-home-config remote add origin git@github.com:tie-ling/user-home-conf
 
 # clone user-Projects
 git clone git@github.com:tie-ling/user-projects Projects
-
-# go to emacs M-x shell, then link to termux:
-cd /data/data/org.gnu.emacs/files/
-
-ln -s /data/data/com.termux/files/home/Projects  ./Projects
-ln -s /data/data/com.termux/files/home/user-home-config/.config/android-termux/.config/emacs/init.el .emacs
-mkdir .emacs.d
-cp  /data/data/com.termux/files/home/user-home-config/.config/android-termux/.config/emacs/early-init.el .emacs.d/
-
-# install noto cjk and juliamono to ~/fonts
-https://github.com/notofonts/noto-cjk/tree/main/Sans#downloading-noto-sans-cjk
-https://github.com/cormullion/juliamono/releases
-
-mkdir fonts
-cd fonts
-curl -LO https://github.com/googlefonts/noto-cjk/raw/main/Sans/Variable/TTF/Mono/NotoSansMonoCJKsc-VF.ttf
-curl -LO https://github.com/cormullion/juliamono/releases/download/v0.059/JuliaMono-ttf.tar.gz
-tar axf JuliaMono-ttf.tar.gz
