@@ -84,6 +84,7 @@ map [normal] <A-Space>   scroll full-up
 map [normal] <A-s>   toggle_statusbar
 map [normal] <BackSpace>   scroll full-up
 map [normal] <C-BackSpace>   navigate previous
+map [normal] <Space>   scroll full-down
 map [normal] <C-Space>   navigate next
 map [normal] <C-r>   search backward
 map [normal] <C-s>   search forward
@@ -91,7 +92,6 @@ map [normal] <Down>   scroll down
 map [normal] <Left>   scroll left
 map [normal] <Return>   scroll full-down
 map [normal] <Right>   scroll right
-map [normal] <Space>   scroll full-down
 map [normal] <Tab>   toggle_index
 map [normal] <Up>   scroll up
 map [normal] =   zoom in
