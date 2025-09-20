@@ -1,1 +1,2 @@
-
+# https://github.com/yt-dlp/yt-dlp/issues/2878#issuecomment-1510502171
+-f bv[height<=720]+ba/b[height<=720]
