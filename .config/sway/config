@@ -72,9 +72,9 @@ set $right f
 #
     # Start a terminal
     bindsym $mod+Return exec $term
-    bindsym $mod+o exec emacsclient --create-frame
+    bindsym $mod+o exec foot emacsclient --tty --create-frame
     bindsym $mod+m exec $term mc
-    bindsym $mod+i exec firefox
+    bindsym $mod+i exec chromium-browser
 
     # Kill focused window
     bindsym $mod+k kill
@@ -263,6 +263,7 @@ seat "*" xcursor_theme Adwaita 32
        natural_scroll enabled
        middle_emulation enabled
        scroll_method edge
+       scroll_factor 0.3
    }
 
 # border customization
