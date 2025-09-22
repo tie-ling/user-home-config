@@ -74,7 +74,7 @@ set $right f
     bindsym $mod+Return exec $term
     bindsym $mod+o exec foot emacsclient --tty --create-frame
     bindsym $mod+m exec $term mc
-    bindsym $mod+i exec chromium-browser
+    bindsym $mod+i exec firefox
 
     # Kill focused window
     bindsym $mod+k kill
