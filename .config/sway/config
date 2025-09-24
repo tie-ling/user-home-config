@@ -74,7 +74,7 @@ set $right f
     bindsym $mod+Return exec $term
     bindsym $mod+o exec foot emacsclient --tty --create-frame
     bindsym $mod+m exec $term mc
-    bindsym $mod+i exec firefox
+    bindsym $mod+i exec chromium
 
     # Kill focused window
     bindsym $mod+k kill
@@ -245,9 +245,12 @@ seat "*" xcursor_theme Adwaita 32
 #
 # Example configuration:
 #
+# screen privacy:
+# make use of systemd logind idlehint feature, to prevent
+# whatever on the screen immediately before suspend is shown
  exec swayidle -w \
-          timeout 300 'systemctl suspend' \
-          before-sleep 'swaylock --daemonize'
+          timeout 150 'swaylock --daemonize' \
+          idlehint 155 
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
