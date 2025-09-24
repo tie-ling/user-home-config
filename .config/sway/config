@@ -250,8 +250,9 @@ seat "*" xcursor_theme Adwaita 32
 # whatever on the screen immediately before suspend is shown
 
 # details: --locked says the bindswitch command also works in lock screen
-#          swayidle idlehint 1 let logind execute sleep command
-bindswitch --locked lid:toggle exec swaylock --daemonize && swayidle idlehint 1
+#          swayidle idlehint 2 let logind execute sleep command after
+#          two seconds
+bindswitch --locked lid:toggle exec swaylock --daemonize && swayidle idlehint 2
 
 # lock screen after 300 seconds of inactivity
 # then let logind execute sleep command
