@@ -247,9 +247,14 @@ seat "*" xcursor_theme Adwaita 32
 #
 # screen privacy:
 # make use of systemd logind idlehint feature, to prevent
-bindswitch --locked lid:on exec swayidle -w timeout 1 'swaylock --daemonize' idlehint 1
-
 # whatever on the screen immediately before suspend is shown
+
+# details: --locked says the bindswitch command also works in lock screen
+#          swayidle idlehint 1 let logind execute sleep command
+bindswitch --locked lid:toggle exec swaylock --daemonize && swayidle idlehint 1
+
+# lock screen after 300 seconds of inactivity
+# then let logind execute sleep command
  exec swayidle -w \
           timeout 150 'swaylock --daemonize' \
           idlehint 155
@@ -306,6 +311,7 @@ input type:touch events disabled
 
 
 # clamshell mode
+#unbindswitch lid:toggle
 #bindswitch --locked lid:on output eDP-1 disable
 #bindswitch --locked lid:off output eDP-1 enable
 
