@@ -257,7 +257,9 @@ bindswitch --locked lid:toggle exec swaylock --daemonize && systemctl sleep
 # lock screen after 300 seconds of inactivity
 # then let logind execute sleep command
 # will not work without quotes
+# if screen lock is on for 60s; sleep again
  exec swayidle -w \
+          timeout 60  'if pgrep swaylock; then systemctl sleep; fi' \
           timeout 150 'swaylock --daemonize' \
           timeout 155 'systemctl sleep'
 
