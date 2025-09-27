@@ -7,3 +7,6 @@ disable omemo encryption
 configure ringtone for video calls
 
 ios: use siskin im
+
+ios callkit is disabled in china, no video/audio calling allowed
+https://github.com/tigase/siskin-im/issues/230#issuecomment-1742030938
