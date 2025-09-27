@@ -5,3 +5,5 @@ https://mirrors.tuna.tsinghua.edu.cn/fdroid/repo/eu.siacs.conversations_4213104.
 disable power management
 disable omemo encryption
 configure ringtone for video calls
+
+ios: use siskin im
