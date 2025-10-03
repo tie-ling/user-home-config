@@ -1,2 +1,5 @@
 # https://github.com/yt-dlp/yt-dlp/issues/2878#issuecomment-1510502171
 -f bv[height<=720]+ba/b[height<=720]
+-S vcodec:h264
+#https://github.com/yt-dlp/yt-dlp/issues/14456
+--extractor-args "youtube:player-client=default,-tv_simply"
