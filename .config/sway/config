@@ -323,7 +323,7 @@ input type:touch events disabled
 bindsym $mod+f1 output eDP-1 enable
 bindsym $mod+Shift+f1 output eDP-1 disable
 
-bindsym $mod+f10 exec grim
+bindsym $mod+f10 exec grim -t jpeg
 
 bindsym $mod+Shift+l exec swaylock --daemonize && systemctl sleep
 
