@@ -12,6 +12,7 @@
 .python_history
 .ssh/known_hosts
 .ssh/known_hosts.old
+.ssh/连接楼上服务器的密钥.key
 .texlive*
 .vmware
 .w3m/cookie
