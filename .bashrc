@@ -33,5 +33,8 @@ newmail () {
     mbsync -a; notmuch new;
 }
 
+vncserver () {
+    WAYLAND_DISPLAY=wayland-1 wayvnc --keyboard=yc --max-fps 60 --gpu localhost
+}
 # w3m needs history file to exist to save browsing history
 if ! [ -e $HOME/.w3m/history ]; then touch $HOME/.w3m/history; fi
