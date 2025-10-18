@@ -1,4 +1,3 @@
-ENTRY "tablet" URL "/sftp://tablet/data/data/com.termux/files/home"
-ENTRY "tablets3" URL "/sftp://tablets3/data/data/com.termux/files/home"
+ENTRY "bt-yc" URL "/sftp://bt-yc/home/yc"
+ENTRY "bt-our" URL "/sftp://bt-our/home/our"
 ENTRY "phone" URL "/sftp://phone/data/data/com.termux/files/home"
-ENTRY "dell-7300" URL "/sftp://192.168.1.199:38448/home/yc"

@@ -341,3 +341,12 @@ input 9580:110:HID_256c:006e  map_to_region 0 0 1920 1200
 
 # or else emacs wl-paste will not work
 exec systemctl --user restart emacs
+
+# https://github.com/any1/wayvnc/blob/master/FAQ.md
+# configure remote desktop vnc server for sway
+
+# pass $mod key to remote session
+mode passthrough {
+	bindsym $mod+Pause mode default
+}
+bindsym $mod+Pause mode passthrough
