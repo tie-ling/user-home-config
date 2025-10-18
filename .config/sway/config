@@ -1,2 +1,2 @@
 include groups/default
-include systems/$HOSTNAME
+include systems/$(hostname)
