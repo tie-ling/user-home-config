@@ -1,0 +1,8 @@
+# https://github.com/any1/wayvnc/blob/master/FAQ.md
+# configure remote desktop vnc server for sway
+
+# pass $mod key to remote session
+mode passthrough {
+	bindsym $mod+Pause mode default
+}
+bindsym $mod+Pause mode passthrough

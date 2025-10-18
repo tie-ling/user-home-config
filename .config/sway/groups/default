@@ -1,0 +1,58 @@
+# Default config for sway
+#
+# Copy this to ~/.config/sway/config and edit it to your liking.
+#
+# Read `man 5 sway` for a complete reference.
+
+# for vmware horizon client
+xwayland enable
+
+### Variables
+#
+# Logo key. Use Mod1 for Alt.
+set $mod Mod4
+# Your preferred terminal emulator
+set $term foot
+# Your preferred application launcher
+# Note: pass the final command to swaymsg so that the resulting window can be opened
+# on the original workspace that the command was run on.
+set $menu rofi -terminal foot -show combi -modes combi -combi-modes "window,filebrowser,drun"
+
+
+font sans-serif 9
+
+
+# Default config for sway
+#
+# Copy this to ~/.config/sway/config and edit it to your liking.
+#
+# Read `man 5 sway` for a complete reference.
+
+workspace_layout tabbed
+
+seat "*" xcursor_theme Adwaita 32
+
+
+
+# border customization
+
+default_border normal 2
+default_floating_border normal 2
+
+hide_edge_borders both
+titlebar_padding 1
+titlebar_border_thickness 0
+
+focus_wrapping yes
+focus_follows_mouse always
+focus_on_window_activation focus
+mouse_warping none
+
+include /etc/sway/config.d/*
+include bar
+include bindsym
+include bindsym-custom
+include exec
+include input
+include output
+include tablets

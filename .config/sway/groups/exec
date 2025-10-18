@@ -1,0 +1,16 @@
+
+
+
+
+
+
+exec dconf load / < $HOME/.config/yc-dconf
+
+
+exec wl-gammarelay-rs
+
+
+
+# or else emacs wl-paste will not work
+exec systemctl --user restart emacs
+

@@ -1,0 +1,9 @@
+bindsym $mod+f1 output eDP-1 enable
+bindsym $mod+Shift+f1 output eDP-1 disable
+
+bindsym $mod+f10 exec grim -t jpeg
+
+bindsym $mod+Shift+l exec swaylock --daemonize && systemctl sleep
+
+bindsym $mod+Control+0          exec busctl --user set-property rs.wl-gammarelay / rs.wl.gammarelay Brightness d 1
+bindsym $mod+Control+Underscore exec busctl --user set-property rs.wl-gammarelay /outputs/DP_1 rs.wl.gammarelay Brightness d 0.5
