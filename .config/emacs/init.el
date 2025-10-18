@@ -98,25 +98,6 @@
   :bind
   (("C-c a" . org-agenda))
   :custom
-  (org-publish-project-alist
-   '(("aadhd-book"
-     :base-directory "~/Projects/orgmode/aadhd-book"
-     :publishing-directory "~/orgpub/aadhd-book/"
-     :auto-sitemap t
-     :sitemap-filename "index.org"
-     :publishing-function org-html-publish-to-html
-     :section-numbers nil
-     :with-toc nil
-     :makeindex t)
-     ("blog"
-      :base-directory "~/Projects/orgmode/blog"
-      :publishing-directory "~/orgpub/blog/"
-      :publishing-function org-html-publish-to-html
-      :auto-sitemap t
-      :sitemap-filename "index.org"
-      :section-numbers nil
-      :with-toc nil
-      :auto-sitemap t)))
   (org-agenda-inhibit-startup t)
   (org-agenda-window-setup 'current-window)
   (org-agenda-start-with-log-mode nil)
@@ -127,9 +108,8 @@
      (tags . " %i %-12:c")
      (search . " %i %-12:c")))
   (org-agenda-files
-   '("~/Projects/agenda/agenda.org"
-     "~/Projects/agenda/uni.org"))
-  (org-directory '("~/Projects/orgmode"))
+   "~/Projects/org/agenda-file-list.txt")
+  (org-directory "~/Projects/org")
   (org-agenda-span 'day)
   (org-display-custom-times nil)
   (org-time-stamp-custom-formats '("%m-%d" . "%H:%M"))
