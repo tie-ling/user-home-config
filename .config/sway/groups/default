@@ -56,3 +56,5 @@ include exec
 include input
 include output
 include tablets
+include idle
+include inhibit-lockscreen
