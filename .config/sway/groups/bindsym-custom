@@ -10,4 +10,4 @@ bindsym $mod+Control+Underscore exec busctl --user set-property rs.wl-gammarelay
 
     bindsym $mod+o exec foot emacsclient --tty --create-frame
     bindsym $mod+m exec $term mc
-    bindsym $mod+i exec firefox
+    bindsym $mod+i exec firefox-esr
