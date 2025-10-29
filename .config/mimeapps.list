@@ -1,31 +1,13 @@
 [Default Applications]
-
-[Added Associations]
-application/epub+zip=org.pwmt.zathura-sandbox.desktop;
+text/html=chromium-browser.desktop
+x-scheme-handler/http=chromium-browser.desktop
+x-scheme-handler/https=chromium-browser.desktop
+x-scheme-handler/about=chromium-browser.desktop
+x-scheme-handler/unknown=chromium-browser.desktop
 application/pdf=org.pwmt.zathura-sandbox.desktop;
+application/epub+zip=org.pwmt.zathura-sandbox.desktop;
 application/vnd.openxmlformats-officedocument.wordprocessingml.document=abiword.desktop
-application/x-extension-htm=chromium-browser.desktop;
-application/x-extension-html=chromium-browser.desktop;
-application/x-extension-shtml=chromium-browser.desktop;
-application/x-extension-xht=chromium-browser.desktop;
-application/x-extension-xhtml=chromium-browser.desktop;
-application/x-shellscript=emacsclient.desktop;
-application/x-zerosize=emacsclient.desktop;
-application/xhtml+xml=chromium-browser.desktop;
 audio/x-opus+ogg=mpv.desktop
 image/jpeg=imv.desktop;
 image/png=imv.desktop;
 image/vnd.djvu+multipage=org.pwmt.zathura-sandbox.desktop
-text/html=chromium-browser.desktop;
-text/org=emacsclient.desktop
-text/plain=emacsclient.desktop
-text/x-chdr=emacsclient.desktop;
-text/x-csrc=emacsclient.desktop;
-text/x-java=emacsclient.desktop;
-text/x-maven+xml=emacsclient.desktop;
-text/x-tex=emacsclient.desktop;
-x-scheme-handler/about=chromium-browser.desktop
-x-scheme-handler/chrome=chromium-browser.desktop;
-x-scheme-handler/http=chromium-browser.desktop;
-x-scheme-handler/https=chromium-browser.desktop;
-x-scheme-handler/unknown=chromium-browser.desktop
