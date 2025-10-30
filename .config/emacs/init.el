@@ -96,7 +96,8 @@
 
 (use-package org
   :bind
-  (("C-c a" . org-agenda))
+  (("C-c a" . org-agenda)
+   ("C-c l" . org-store-link))
   :custom
   (org-agenda-inhibit-startup t)
   (org-agenda-window-setup 'current-window)
