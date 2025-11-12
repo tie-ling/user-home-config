@@ -14,7 +14,7 @@
   <property name="zoomStep" value="10"/>
   <property name="zoomStepScroll" value="2"/>
   <property name="displayDpi" value="150"/>
-  <property name="mainWndWidth" value="1920"/>
+  <property name="mainWndWidth" value="958"/>
   <property name="mainWndHeight" value="1063"/>
   <property name="maximized" value="false"/>
   <property name="showToolbar" value="true"/>
@@ -164,45 +164,9 @@
     </data>
   </data>
   <data name="deviceClasses">
-    <data name="GAOMON Gaomon Tablet_M10KPRO Pen">
+    <data name="PenTablet">
       <attribute name="deviceClass" type="int" value="2"/>
       <attribute name="deviceSource" type="int" value="1"/>
-    </data>
-    <data name="GAOMON Gaomon Tablet_M10KPRO Pen (Eraser)">
-      <attribute name="deviceClass" type="int" value="3"/>
-      <attribute name="deviceSource" type="int" value="2"/>
-    </data>
-    <data name="HID 256c:006e">
-      <attribute name="deviceClass" type="int" value="2"/>
-      <attribute name="deviceSource" type="int" value="1"/>
-    </data>
-    <data name="HID 256c:006e (Eraser)">
-      <attribute name="deviceClass" type="int" value="3"/>
-      <attribute name="deviceSource" type="int" value="2"/>
-    </data>
-    <data name="HID 256c:006e Pen">
-      <attribute name="deviceClass" type="int" value="2"/>
-      <attribute name="deviceSource" type="int" value="1"/>
-    </data>
-    <data name="HID 256c:006e Pen (Eraser)">
-      <attribute name="deviceClass" type="int" value="3"/>
-      <attribute name="deviceSource" type="int" value="2"/>
-    </data>
-    <data name="PenTablet Pen">
-      <attribute name="deviceClass" type="int" value="2"/>
-      <attribute name="deviceSource" type="int" value="1"/>
-    </data>
-    <data name="PenTablet Pen (Eraser)">
-      <attribute name="deviceClass" type="int" value="3"/>
-      <attribute name="deviceSource" type="int" value="2"/>
-    </data>
-    <data name="Wacom Intuos PT M 2 Pen">
-      <attribute name="deviceClass" type="int" value="2"/>
-      <attribute name="deviceSource" type="int" value="1"/>
-    </data>
-    <data name="Wacom Intuos PT M 2 Pen (Eraser)">
-      <attribute name="deviceClass" type="int" value="3"/>
-      <attribute name="deviceSource" type="int" value="2"/>
     </data>
     <data name="Wayland Finger Scrolling">
       <attribute name="deviceClass" type="int" value="1"/>

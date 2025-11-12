@@ -5,7 +5,5 @@
 # 16:10 ratio of tablet working area
 
 # on laptop
-input 9580:110:PenTablet_Pen  map_to_region 0 0 960 600
+input 9580:110:PenTablet  map_to_region 0 0 1920 1200
 
-# on desktop, 1920x1200 (/5*6), because of 10x6.25 drawing area
-input 9580:109:GAOMON_Gaomon_Tablet_M10KPRO  map_to_region 0 0 2304 1440
