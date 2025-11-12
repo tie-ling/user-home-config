@@ -105,7 +105,7 @@
   (org-caldav-calendar-id "8dfa40d2-5f00-4795-a177-60851be1cc99")
 
   ;; Org filename where new entries from calendar stored
-  (org-caldav-inbox "~/caldav.org")
+  (org-caldav-inbox "~/Projects/org/caldav.org")
 
   ;; Additional Org files to check for calendar events
   (org-caldav-files nil)
@@ -128,7 +128,7 @@
      (tags . " %i %-12:c")
      (search . " %i %-12:c")))
   (org-agenda-files
-   '("~/caldav.org"))
+   "~/Projects/org/agenda-file-list.txt")
   (org-directory "~/Projects/org")
   (org-agenda-span 'day)
   (org-display-custom-times nil)
