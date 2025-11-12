@@ -102,7 +102,7 @@
   (org-caldav-url "https://www.apvc.uk/radicale/yc/")
 
   ;; calendar ID on server
-  (org-caldav-calendar-id "3f97c834-b512-e321-3b9b-0db492008a25")
+  (org-caldav-calendar-id "8dfa40d2-5f00-4795-a177-60851be1cc99")
 
   ;; Org filename where new entries from calendar stored
   (org-caldav-inbox "~/caldav.org")
