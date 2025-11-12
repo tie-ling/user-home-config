@@ -94,6 +94,25 @@
    (ledger-default-date-format "%y-%m-%d"))
   :mode ("\\.ledger\\'"))
 
+(use-package org-caldav
+  :init
+  (auth-source-pass-enable)
+  :custom
+  ;; URL of the caldav server
+  (org-caldav-url "https://www.apvc.uk/radicale/yc/")
+
+  ;; calendar ID on server
+  (org-caldav-calendar-id "3f97c834-b512-e321-3b9b-0db492008a25")
+
+  ;; Org filename where new entries from calendar stored
+  (org-caldav-inbox "~/caldav.org")
+
+  ;; Additional Org files to check for calendar events
+  (org-caldav-files nil)
+
+  ;; Usually a good idea to set the timezone manually
+  (org-icalendar-timezone "Europe/Berlin"))
+
 (use-package org
   :bind
   (("C-c a" . org-agenda)
@@ -109,7 +128,7 @@
      (tags . " %i %-12:c")
      (search . " %i %-12:c")))
   (org-agenda-files
-   "~/Projects/org/agenda-file-list.txt")
+   '("~/caldav.org"))
   (org-directory "~/Projects/org")
   (org-agenda-span 'day)
   (org-display-custom-times nil)
@@ -276,3 +295,5 @@ char."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+
