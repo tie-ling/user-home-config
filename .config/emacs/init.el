@@ -91,8 +91,8 @@
 
 (use-package ledger-mode
   :custom
-  ((ledger-report-use-strict t)
-   (ledger-default-date-format "%y-%m-%d"))
+  (ledger-report-use-strict t)
+  (ledger-default-date-format "%y-%m-%d")
   :mode ("\\.ledger\\'"))
 
 (use-package org-caldav
@@ -135,7 +135,7 @@
   (org-display-custom-times nil)
   (org-time-stamp-custom-formats '("%m-%d" . "%H:%M"))
   (org-export-initial-scope 'buffer)
-  (org-export-backends '(ascii beamer html icalendar latex md odt)
+  (org-export-backends '(ascii beamer html icalendar latex md odt))
   (org-modules
    '(ol-bbdb ol-bibtex ol-doi ol-eww ol-info ol-irc ol-mhe ol-rmail org-tempo))
   (org-structure-template-alist
