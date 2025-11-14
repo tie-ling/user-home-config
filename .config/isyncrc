@@ -14,8 +14,9 @@ Path            ~/Mail/Personal/
 Inbox           ~/Mail/Personal/INBOX
 
 Channel         Personal-inbox
-Far             :Personal-remote:"INBOX"
-Near            :Personal-local:INBOX
-Create          Near
+Far             :Personal-remote:
+Near            :Personal-local:
+Patterns        *
+Create          Both
 Expunge         Both
 SyncState       *
