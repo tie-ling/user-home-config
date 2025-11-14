@@ -69,6 +69,7 @@
 
 (use-package notmuch
   :custom
+  (notmuch-archive-tags '("-inbox" "+archived"))
   (notmuch-crypto-process-mime nil)
   (notmuch-saved-searches
    '((:name "inbox" :query "tag:inbox not tag:deleted" :key "i")
@@ -134,6 +135,7 @@
   (org-display-custom-times nil)
   (org-time-stamp-custom-formats '("%m-%d" . "%H:%M"))
   (org-export-initial-scope 'buffer)
+  (org-export-backends '(ascii beamer html icalendar latex md odt)
   (org-modules
    '(ol-bbdb ol-bibtex ol-doi ol-eww ol-info ol-irc ol-mhe ol-rmail org-tempo))
   (org-structure-template-alist
@@ -274,26 +276,4 @@ char."
                ("\\mathbb{C}" . ?ℂ)
                ("\\mathbb{K}" . ?𝕂)))
       (add-to-list 'tex--prettify-symbols-alist symb))))
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(face-font-family-alternatives
-   '(("JuliaMono" "Noto Sans Mono CJK SC")
-     ("Monospace" "courier" "fixed")
-     ("Monospace Serif" "Courier 10 Pitch" "Consolas" "Courier Std"
-      "FreeMono" "Nimbus Mono L" "courier" "fixed")
-     ("courier" "CMU Typewriter Text" "fixed")
-     ("Sans Serif" "helv" "helvetica" "arial" "fixed")
-     ("helv" "helvetica" "arial" "fixed")))
- '(org-export-backends '(ascii beamer html icalendar latex md odt))
- '(package-selected-packages nil))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
-
 
