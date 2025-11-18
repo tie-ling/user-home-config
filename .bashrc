@@ -30,7 +30,7 @@ gitstatusall () {
 export LEDGER_FILE=$HOME/Projects/ledger/yc.ledger
 
 newmail () {
-    notmuch-mailmover; mbsync -a; notmuch new;
+    notmuch-mailmover; mbsync -a; notmuch new; notmuch tag +deleted -- folder:/Trash/
 }
 
 # w3m needs history file to exist to save browsing history
