@@ -20,4 +20,5 @@ Projects
 sys-conf
 .sane
 .omnissa
-
+.ssh/连接楼上服务器的密钥.key
+.pki
