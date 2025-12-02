@@ -26,6 +26,7 @@
 
 (use-package emacs
   :custom
+  (menu-bar-mode nil)
   (auto-fill-function 'do-auto-fill t)
   (calendar-week-start-day 1)
   (completion-ignore-case t)
