@@ -18,15 +18,15 @@ rule_match_mode: unique
 rules:
   # move mails tagged as `trash` to folder `Trash`
   - folder: Trash
-    query: tag:trash
+    query: tag:deleted
 
   # move mails tagged as `sent` to folder `Sent`
   - folder: Sent
-    query: tag:sent and not tag:trash
+    query: tag:sent and not tag:deleted
 
   # move mails tagged as `archive` to folder `Archive`
   - folder: Archive
-    query: tag:archived and not tag:sent and not tag:trash
+    query: tag:archived and not tag:sent and not tag:deleted
 
   - folder: Junk
     query: tag:spam
