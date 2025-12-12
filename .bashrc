@@ -33,5 +33,10 @@ newmail () {
     notmuch-mailmover; mbsync -a; notmuch new; notmuch tag +deleted -- folder:/Trash/
 }
 
+lap_en_display () {
+    SWAYSOCK=$(find $XDG_RUNTIME_DIR -maxdepth 1 -name 'sway-ipc*' -type s) \
+            swaymsg output eDP-1 enable
+}
+
 # w3m needs history file to exist to save browsing history
 if ! [ -e $HOME/.w3m/history ]; then touch $HOME/.w3m/history; fi
