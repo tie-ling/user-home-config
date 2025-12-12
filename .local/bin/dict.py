@@ -31,6 +31,7 @@ def show_results(found_words) -> None:
     blob_id = choice(
         message="Select a result:",
         options=found_words,
+        mouse_support=True,
     )
     with slob.open('/home/yc/Documents/dict/dewiktionary.slob') as s:
         _content_type, content = s.get(blob_id)
