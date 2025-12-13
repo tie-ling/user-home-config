@@ -7,17 +7,8 @@ e () {
     emacsclient --alternate-editor='' --create-frame  "${@}"
 }
 
-tablap () {
-    swaymsg input 9580:110:PenTablet  map_to_region 0 0 960 600
-}
-
 tabdesk () {
     swaymsg input 9580:110:PenTablet  map_to_region 0 0 1920 1200
-}
-
-tabdesk720p() {
-    swaymsg output DP-1 res 1280x720 scale 1
-    swaymsg input 9580:110:PenTablet  map_to_region 0 0 1280 800
 }
 
 gitpushall () {
