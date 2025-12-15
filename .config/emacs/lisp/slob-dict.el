@@ -36,7 +36,7 @@
         (window-configuration (current-window-configuration))
         (selected-window (frame-selected-window)))
 
-    (switch-to-buffer-other-window buffer)
+    (switch-to-buffer buffer)
     (slob-dict-mode)
 
     (setq-local slob-dict-window-configuration window-configuration)
