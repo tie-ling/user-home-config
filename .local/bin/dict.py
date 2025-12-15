@@ -38,7 +38,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--source",
                         type = Path,
-                        required=True)
+                        default='~/Documents/dict/dewiktionary.slob')
     parser.add_argument("--query",
                         required=True)
     args = parser.parse_args()

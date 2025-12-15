@@ -82,6 +82,10 @@
      (:name "all mail" :query "*" :key "a")))
   (notmuch-show-logo nil))
 
+(use-package text-mode
+  :bind
+  (("C-c d" . dictionary-search)))
+
 (use-package savehist
   :init
   (savehist-mode))
@@ -260,3 +264,5 @@ char."
                ("\\mathbb{K}" . ?𝕂)))
       (add-to-list 'tex--prettify-symbols-alist symb))))
 
+(use-package slob-dict
+  :load-path "./")
