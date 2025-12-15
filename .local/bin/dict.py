@@ -60,7 +60,7 @@ if __name__ == "__main__":
     _content_type, content = s.get(blob.id)
 
     # render content
-    rendered = subprocess.run(["w3m", "-T", "text/html", "-dump", "-cols", "50"], input=content.decode('utf-8'), capture_output=True, text=True)
+    rendered = subprocess.run(["w3m", "-T", "text/html", "-dump", "-cols", "80"], input=content.decode('utf-8'), capture_output=True, text=True)
 
     # close dictionary
     s.close()
