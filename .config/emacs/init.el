@@ -265,4 +265,4 @@ char."
       (add-to-list 'tex--prettify-symbols-alist symb))))
 
 (use-package slob-dict
-  :load-path "./")
+  :load-path "lisp")
