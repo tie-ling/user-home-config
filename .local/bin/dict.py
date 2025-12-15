@@ -1,52 +1,69 @@
 #!/usr/bin/env python
 # https://ftp.halifax.rwth-aachen.de/aarddict/dewiki/dewiktionary20250701-slob/
 
-from __future__ import annotations
-
-from prompt_toolkit.shortcuts import choice
-from prompt_toolkit import prompt
-
+import argparse
 import slob
-import subprocess
+from pathlib import Path
 import sys
 import os
+import subprocess
 
-# 0. ask for a word
-# 1. generate a list of tuple of matches
-# 2. prompt in prompt toolkit
-# 3. render result in w3m
+# 0. take all arguments as query string
+# 1. find identical result
+# 2. render identical result
 
-def find_word():
-    query = prompt('?: ')
-    found_words = []
-    with slob.open('/home/yc/Documents/dict/dewiktionary.slob') as s:
-        for i, item in enumerate(slob.find(query, s, match_prefix=True)):
-            _, blob = item
-            found_words.append((blob.id, blob.key))
-            if i == 10:
-                break
-    return found_words
+from icu import Locale, Collator, UCollAttribute, UCollAttributeValue
 
-def show_results(found_words) -> None:
-    blob_id = choice(
-        message="Select a result:",
-        options=found_words,
-        mouse_support=True,
-    )
-    with slob.open('/home/yc/Documents/dict/dewiktionary.slob') as s:
-        _content_type, content = s.get(blob_id)
-        subprocess.run(["w3m", "-T", "text/html", "-o", "confirm_qq=0"], 
-                       input=content)
+def find_identical(word, slobs):
+    seen = set()
+    slobs = [slobs]
+
+    variants = []
+
+    variants.append((Collator.IDENTICAL, None))
+
+    for strength, maxlength in variants:
+        for slob in slobs:
+            d = slob.as_dict(strength=strength, maxlength=maxlength)
+            for item in d[word]:
+                dedup_key = (slob.id, item.id, item.fragment)
+                if dedup_key in seen:
+                    continue
+                else:
+                    seen.add(dedup_key)
+                    yield slob, item
 
 if __name__ == "__main__":
-    try:
-        while True:
-            found_words=find_word()
-            show_results(found_words)
-    except KeyboardInterrupt:
-        print('Interrupted')
-        try:
-            sys.exit(130)
-        except SystemExit:
-            os._exit(130)
+    # parse command arguments
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--source",
+                        type = Path,
+                        required=True)
+    parser.add_argument("--query",
+                        required=True)
+    args = parser.parse_args()
 
+    # open dictionary
+    s = slob.open(os.fspath(args.source))
+
+    # return blob id from the first result
+    for i, item in enumerate(find_identical(args.query, s)):
+        _, blob = item
+        if i == 1:
+            break
+
+    if 'blob' not in globals():
+        print("word not found")
+        sys.exit()
+
+    # retrieve content
+    _content_type, content = s.get(blob.id)
+
+    # render content
+    rendered = subprocess.run(["w3m", "-T", "text/html", "-dump"], input=content.decode('utf-8'), capture_output=True, text=True)
+
+    # close dictionary
+    s.close()
+
+    print(rendered.stdout)
+    sys.exit()
