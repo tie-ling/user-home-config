@@ -84,7 +84,7 @@
 
 (use-package text-mode
   :bind
-  (("C-c d" . dictionary-search)))
+  (("C-c d" . slob-dict-search)))
 
 (use-package savehist
   :init
