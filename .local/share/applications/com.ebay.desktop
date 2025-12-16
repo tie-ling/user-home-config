@@ -1,8 +1,0 @@
-[Desktop Entry]
-Version=1.0
-Name=yc ebay
-Exec=firefox -P ebay
-StartupNotify=true
-Terminal=false
-Type=Application
-MimeType=
