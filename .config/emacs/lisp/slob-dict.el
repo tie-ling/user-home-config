@@ -22,6 +22,7 @@
 (define-derived-mode slob-dict-mode special-mode "Slob-Dict"
  "Mode for searching a slob-dict."
   (buffer-disable-undo)
+  (variable-pitch-mode)
   (add-hook 'kill-buffer-hook #'slob-dict-close t t))
 
 (defun slob-dict-store-positions ()
