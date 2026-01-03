@@ -34,5 +34,9 @@ lap_en_display () {
             swaymsg output eDP-1 enable
 }
 
+rundictd () {
+    dictd --pid-file $XDG_RUNTIME_DIR/dictd.pid -s -c /tmp/dictd.conf --locale en_US.UTF-8
+}
+
 # w3m needs history file to exist to save browsing history
 if ! [ -e $HOME/.w3m/history ]; then touch $HOME/.w3m/history; fi
