@@ -75,16 +75,15 @@
     (let ((map (make-sparse-keymap)))
       (tool-bar-local-item-from-menu 'dictionary-lookup-definition "index" map dictionary-mode-map  :label "Look up word at point")
       (tool-bar-local-item-from-menu 'scroll-up-command "save" map global-map  :label "Scroll up")
-      (setq-local secondary-tool-bar-map map)))
+      (setq-local secondary-tool-bar-map map))))
 
+(use-package text-mode
+  :hook
+  ((text-mode . variable-pitch-mode))
   :bind
   (("C-c d" . dictionary-lookup-definition)
    ("<f6>" . dictionary-lookup-definition)))
 
-
-(use-package text-mode
-  :hook
-  ((text-mode . variable-pitch-mode)))
 
 (use-package savehist
   :init
