@@ -4,7 +4,7 @@
 # Not 16:9 ratio
 # 16:10 ratio of tablet working area
 
-# on laptop
-input 9580:110:PenTablet  map_to_region 0 0 1920 1200
+# on laptop, 3840x2160 scale 3
+input 9580:110:PenTablet  map_to_region 0 0 1280 800
 
 #empty
