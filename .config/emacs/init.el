@@ -60,14 +60,31 @@
      (:name "all mail" :query "*" :key "a")))
   (notmuch-show-logo nil))
 
-(use-package text-mode
+(use-package dictionary
   :hook
-  ((text-mode . variable-pitch-mode)
-   (dictionary-mode . variable-pitch-mode))
+  ((dictionary-mode . variable-pitch-mode)
+   (text-mode . text-mode-tool-bar)
+   (dictionary-mode . text-mode-tool-bar))
+
+  :config
+  (defun text-mode-tool-bar (&rest _ignored)
+    "Set up tool bar for text mode"
+    (interactive)
+    (define-key menu-bar-goto-menu [scroll-up]
+                '(menu-item "Scroll up" scroll-up-command :help "Scroll up a full screen"))
+    (let ((map (make-sparse-keymap)))
+      (tool-bar-local-item-from-menu 'dictionary-lookup-definition "index" map dictionary-mode-map  :label "Look up word at point")
+      (tool-bar-local-item-from-menu 'scroll-up-command "save" map global-map  :label "Scroll up")
+      (setq-local secondary-tool-bar-map map)))
 
   :bind
   (("C-c d" . dictionary-lookup-definition)
    ("<f6>" . dictionary-lookup-definition)))
+
+
+(use-package text-mode
+  :hook
+  ((text-mode . variable-pitch-mode)))
 
 (use-package savehist
   :init
