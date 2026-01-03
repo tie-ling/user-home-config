@@ -2,7 +2,6 @@
 
 (use-package emacs
   :custom
-  (menu-bar-mode t)
   (auto-fill-function 'do-auto-fill t)
   (calendar-week-start-day 1)
   (completion-ignore-case t)
@@ -12,11 +11,14 @@
   (display-time-mode t)
   (electric-pair-mode t)
   (enable-local-variables nil)
-  (enable-recursive-minibuffers t)
+  (face-font-family-alternatives
+   '(("JuliaMono" "Noto Sans Mono CJK SC")
+     ("Libertinus Serif" "Noto Serif CJK SC")))
   (indent-tabs-mode nil)
   (inhibit-startup-screen t)
   (mail-envelope-from 'header)
   (mail-specify-envelope-from t)
+  (menu-bar-mode t)
   (message-default-mail-headers "Reply-To: Yuchen Guo <yc@apvc.uk>")
   (message-sendmail-envelope-from 'header)
   (modus-themes-bold-constructs nil)
@@ -27,9 +29,9 @@
   (read-buffer-completion-ignore-case t)
   (read-file-name-completion-ignore-case t)
   (require-final-newline t)
+  (scroll-bar-mode nil)
   (send-mail-function 'sendmail-send-it)
   (sendmail-program "msmtp")
-  (scroll-bar-mode nil)
   (tab-always-indent 'complete)
   (tool-bar-mode nil)
   (user-mail-address "yc@apvc.uk"))
@@ -249,9 +251,6 @@ char."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(face-font-family-alternatives
-   '(("JuliaMono" "Noto Sans Mono CJK SC")
-     ("Libertinus Serif" "Noto Serif CJK SC")))
  '(package-selected-packages nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
