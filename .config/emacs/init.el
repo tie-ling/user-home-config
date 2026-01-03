@@ -62,7 +62,8 @@
 
 (use-package text-mode
   :hook
-  ((text-mode . variable-pitch-mode))
+  ((text-mode . variable-pitch-mode)
+   (dictionary-mode . variable-pitch-mode))
 
   :bind
   (("C-c d" . dictionary-lookup-definition)
