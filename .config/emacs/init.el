@@ -63,8 +63,8 @@
   ((text-mode . variable-pitch-mode))
 
   :bind
-  (("C-c d" . slob-dict-search)
-   ("<f6>" . slob-dict-search)))
+  (("C-c d" . dictionary-search)
+   ("<f6>" . dictionary-search)))
 
 (use-package savehist
   :init
@@ -244,8 +244,6 @@ char."
                ("\\mathbb{K}" . ?𝕂)))
       (add-to-list 'tex--prettify-symbols-alist symb))))
 
-(use-package slob-dict
-  :load-path "lisp")
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
