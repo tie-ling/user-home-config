@@ -258,6 +258,5 @@ char."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "JuliaMono" :foundry "corm" :slant normal :weight regular :width normal))))
- '(variable-pitch ((t (:family "Libertinus Serif" :slant normal
-  :weight regular :width normal :height 150)))))
+ '(default ((t (:family "JuliaMono"))))
+ '(variable-pitch ((t (:family "Libertinus Serif" :height 130)))))
