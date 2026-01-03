@@ -63,8 +63,8 @@
   ((text-mode . variable-pitch-mode))
 
   :bind
-  (("C-c d" . dictionary-search)
-   ("<f6>" . dictionary-search)))
+  (("C-c d" . dictionary-lookup-definition)
+   ("<f6>" . dictionary-lookup-definition)))
 
 (use-package savehist
   :init
