@@ -35,7 +35,7 @@ lap_en_display () {
 }
 
 rundictd () {
-    dictd --pid-file $XDG_RUNTIME_DIR/dictd.pid -s -c /tmp/dictd.conf --locale en_US.UTF-8
+    dictd --pid-file $XDG_RUNTIME_DIR/dictd.pid -s -c ~/.config/dictd.conf --locale en_US.UTF-8
 }
 
 # w3m needs history file to exist to save browsing history
