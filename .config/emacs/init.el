@@ -61,6 +61,9 @@
   (notmuch-show-logo nil))
 
 (use-package dictionary
+  :custom
+  (dictionary-default-strategy "re")
+  (dictionary-use-single-buffer t)
   :hook
   ((dictionary-mode . variable-pitch-mode)
    (text-mode . text-mode-tool-bar)
