@@ -1,6 +1,20 @@
 ;; -*- lexical-binding: t; -*-
 
 (use-package emacs
+  :config
+  (defun set-input-method-chinese ()
+    (interactive)
+    (set-input-method "pyim"))
+  (defun set-input-method-german ()
+    (interactive)
+    (set-input-method "german"))
+  (defun set-input-method-TeX ()
+    (interactive)
+    (set-input-method "TeX"))
+  :bind
+  (("C-c i c" . set-input-method-chinese)
+   ("C-c i g" . set-input-method-german)
+   ("C-c i t" . set-input-method-TeX))
   :custom
   (auto-fill-function 'do-auto-fill t)
   (calendar-week-start-day 1)
