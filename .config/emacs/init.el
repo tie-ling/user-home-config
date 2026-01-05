@@ -14,7 +14,8 @@
   :bind
   (("C-c i c" . set-input-method-chinese)
    ("C-c i g" . set-input-method-german)
-   ("C-c i t" . set-input-method-TeX))
+   ("C-c i t" . set-input-method-TeX)
+   ("M-o" . other-window))
   :custom
   (auto-fill-function 'do-auto-fill t)
   (calendar-week-start-day 1)
@@ -24,7 +25,7 @@
   (display-battery-mode t)
   (display-time-mode t)
   (electric-pair-mode t)
-  (enable-local-variables nil)
+  (enable-local-variables :safe)
   (face-font-family-alternatives
    '(("JuliaMono" "Noto Sans Mono CJK SC")
      ("Libertinus Serif" "Noto Serif CJK SC")))
@@ -43,7 +44,7 @@
   (read-buffer-completion-ignore-case t)
   (read-file-name-completion-ignore-case t)
   (require-final-newline t)
-  (scroll-bar-mode nil)
+  (scroll-bar-mode t)
   (send-mail-function 'sendmail-send-it)
   (sendmail-program "msmtp")
   (tab-always-indent 'complete)
@@ -91,6 +92,7 @@
   (dictionary-use-single-buffer t)
   :hook
   ((dictionary-mode . variable-pitch-mode)
+   (dictionary-mode . visual-line-mode)
    (text-mode . text-mode-tool-bar)
    (dictionary-mode . text-mode-tool-bar))
 
