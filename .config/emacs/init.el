@@ -75,6 +75,17 @@
   (notmuch-show-logo nil))
 
 (use-package dictionary
+  :config
+  (defun yc-dictionary-lookup-definition ()
+    "With DictD Capitalisation Fix. Unconditionally lookup the word at point."
+    (interactive)
+    (setq-local case-fold-search nil)
+    (let* ((cword (current-word))
+          (word  (if (string-match-p "^[A-ZÄÜÖ]" cword) (concat "9" cword) cword)))
+      (unless word
+        (user-error "No word at point"))
+      (dictionary-new-search (cons word dictionary-default-dictionary)))
+    (setq-local case-fold-search t))
   :custom
   (dictionary-default-strategy "re")
   (dictionary-use-single-buffer t)
@@ -89,8 +100,10 @@
     (interactive)
     (define-key menu-bar-goto-menu [scroll-up]
                 '(menu-item "Scroll up" scroll-up-command :help "Scroll up a full screen"))
+    (define-key menu-bar-tools-menu [dictionary]
+                '(menu-item "Dictionary" yc-dictionary-lookup-definition :help "Look up word at point"))
     (let ((map (make-sparse-keymap)))
-      (tool-bar-local-item-from-menu 'dictionary-lookup-definition "index" map dictionary-mode-map  :label "Look up word at point")
+      (tool-bar-local-item-from-menu 'yc-dictionary-lookup-definition "index" map global-map  :label "Look up word at point")
       (tool-bar-local-item-from-menu 'scroll-up-command "save" map global-map  :label "Scroll up")
       (setq-local secondary-tool-bar-map map))))
 
@@ -98,8 +111,8 @@
   :hook
   ((text-mode . variable-pitch-mode))
   :bind
-  (("C-c d" . dictionary-lookup-definition)
-   ("<f6>" . dictionary-lookup-definition)))
+  (("C-c d" . yc-dictionary-lookup-definition)
+   ("<f6>" . yc-dictionary-lookup-definition)))
 
 
 (use-package savehist
