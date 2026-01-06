@@ -106,7 +106,7 @@
     "With DictD Capitalisation Fix. Unconditionally lookup the word at point."
     (interactive)
     (setq-local case-fold-search nil)
-    (let* ((cword (current-word))
+    (let* ((cword (current-word nil t))
           (word  (if (string-match-p "^[A-ZÄÜÖ]" cword) (concat "9" cword) cword)))
       (unless word
         (user-error "No word at point"))
