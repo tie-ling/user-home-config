@@ -157,6 +157,8 @@
 
 
 (use-package org
+  :config
+  (set-face-attribute 'org-block nil :inherit 'fixed-pitch)
   :bind
   (("C-c a" . org-agenda)
    ("C-c l" . org-store-link))
