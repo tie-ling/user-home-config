@@ -124,9 +124,11 @@ set $right f
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
+    bindsym $mod+c focus child
 
     # Move focus to the parent container, then to the left container
-    bindsym $mod+Ctrl+space focus parent; focus left
+    bindsym $mod+bracketright focus next
+    bindsym $mod+bracketleft focus prev
 #
 # Scratchpad:
 #
