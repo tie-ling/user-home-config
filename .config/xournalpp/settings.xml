@@ -92,7 +92,7 @@
   <property name="preloadPagesAfter" value="5"/>
   <property name="eagerPageCleanup" value="true"/>
   <!--Config for new pages-->
-  <property name="pageTemplate" value="xoj/template&#10;copyLastPageSize=false&#10;copyLastPageSettings=true&#10;size=419.527559x595.275591&#10;backgroundType=ruled&#10;backgroundColor=#ffffff&#10;"/>
+  <property name="pageTemplate" value="xoj/template&#10;copyLastPageSize=false&#10;copyLastPageSettings=true&#10;size=419.527559x595.275591&#10;backgroundType=dotted&#10;backgroundColor=#ffffff&#10;"/>
   <property name="sizeUnit" value="cm"/>
   <property name="audioFolder" value=""/>
   <property name="audioInputDevice" value="-1"/>
@@ -228,7 +228,7 @@
       <attribute name="drawingType" type="string" value="default"/>
       <attribute name="fill" type="int" value="0"/>
       <attribute name="fillAlpha" type="int" value="128"/>
-      <attribute name="size" type="string" value="VERY_FINE"/>
+      <attribute name="size" type="string" value="THIN"/>
       <attribute name="style" type="string" value="plain"/>
     </data>
     <data name="playObject">
