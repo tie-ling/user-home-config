@@ -53,7 +53,7 @@
   (enable-local-variables :safe)
   (face-font-family-alternatives
    '(("JuliaMono" "Noto Sans Mono CJK SC")
-     ("TeX Gyre Schola" "Noto Serif CJK SC")))
+     ("Old Standard" "Noto Serif CJK SC")))
   (indent-tabs-mode nil)
   (inhibit-startup-screen t)
   (mail-envelope-from 'header)
@@ -319,4 +319,4 @@ char."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:family "JuliaMono"))))
- '(variable-pitch ((t (:family "TeX Gyre Schola" :height 120)))))
+ '(variable-pitch ((t (:family "Old Standard" :height 120)))))
