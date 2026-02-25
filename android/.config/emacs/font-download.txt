@@ -1,0 +1,11 @@
+emacs fonts
+https://github.com/googlefonts/noto-cjk/raw/main/Sans/Variable/TTF/Subset/NotoSansSC-VF.ttf
+
+https://github.com/googlefonts/noto-cjk/raw/main/Serif/Variable/TTF/Subset/NotoSerifSC-VF.ttf
+
+https://github.com/alerque/libertinus/releases/download/v7.051/Libertinus-7.051.zip
+
+https://github.com/cormullion/juliamono/releases/download/v0.061/JuliaMono-ttf.zip
+
+place inside ~/fonts
+NOT ~/.emacs.d/fonts

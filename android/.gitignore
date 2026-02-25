@@ -1,0 +1,14 @@
+*~
+
+.bash_history
+.cache
+.local
+storage
+Projects
+.lesshst
+
+.w3m/history
+.config/emacs/
+/.termux/font.ttf
+.w3m/
+/.ssh/known_hosts.old

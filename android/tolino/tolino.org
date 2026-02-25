@@ -1,0 +1,100 @@
+* use 15.3.2 firmware
+https://download.pageplace.de/ereader/15.3.2/OS44/update.zip
+
+mount /dev/sda /mnt
+cp 15-3-2update.zip /mnt/update.zip
+eject /dev/sda
+
+reboot device to commence update
+
+* enable adb debug the device
+https://allesebook.de/anleitung/tolino-page-2-shine-3-vision-5-root-adb-und-apps-installieren-anleitung-982951/
+
+extract custom-boot.img
+
+execute fastboot, wait for device
+fastboot flash boot.img
+
+while connect to computer, power on by holding power button for 30 secs
+
+fastboot reboot
+
+* install only essential apps
+tolino android 4.4 apps, with exit button
+
+https://f-droid.org/repo/com.ghostsq.commander_396.apk
+https://github.com/koreader/koreader/releases
+https://f-droid.org/repo/com.gacode.relaunchx_200106000.apk
+https://f-droid.org/repo/tw.com.daxia.virtualsoftkeys_10.apk
+
+find -type f -name '*apk' | xargs -I{} adb install {}
+
+* reboot, select new launcher as default
+adb shell reboot
+
+* set up virtual soft keys.  transparent color
+
+* launch koreader for a first time, to build dir structure
+
+* copy files
+alternative 1:
+mount /dev/sda /mnt
+eject /mnt
+
+alternative 2:
+adb push books /sdcard/Documents
+adb push dict/en /sdcard/koreader/data/dict
+adb push dict/de /sdcard/koreader/data/dict
+adb push fonts /sdcard/koreader
+
+* koreader config
+
+* dicts
+https://www.reader-dict.com/
+only monolingual version is free
+https://www.reader-dict.com/download/de
+https://www.reader-dict.com/download/en
+https://www.reader-dict.com/file/en/dict-en-en-noetym.zip
+https://www.reader-dict.com/file/de/dict-de-de-noetym.zip
+
+7zz x *.zip
+adb push  /sdcard/koreader/data/dict/
+
+(for use on computer with dict)
+https://www.reader-dict.com/file/de/dictorg-de-de-noetym.zip
+https://www.reader-dict.com/file/en/dictorg-en-en-noetym.zip
+
+* font
+https://github.com/alerque/libertinus/releases
+https://github.com/notofonts/noto-cjk/tree/main/Serif#downloading-noto-serif-cjk
+
+/nix/store/vk2c7625ad1fk9dhrv5j3mg434klfp2f-texlive-2025-env-texmfroot/texmf-dist/fonts/opentype/public/
+use latin modern
+
+after restart koreader, in the top menu, font, select new font, long
+press to set default
+
+* users manual
+https://koreader.rocks/user_guide/
+https://github.com/koreader/koreader/wiki
+
+* book transfer
+copy book to my phone
+start a ftp server on my android phone
+use ftp client inside ghost commander
+
+* frontlight
+enable front light inside tolino launcher app,
+then use koreader to control the lighting
+
+* battery
+https://ampul.eu/de/batterie/4452-li-pol-akku-3000mah-37v-306090
+https://www.amazon.de/-/en/Goysen-Connector-220-Waterproof-Transparent/dp/B0CDL5QLN5
+
+* disable gray background when selecting text
+https://github.com/koreader/koreader/issues/6932#issuecomment-736579870
+koreader/issues/13959
+
+inside root, /data/data/org.koreader.launcher/files/data/cr3.ini
+
+change to crengine.highlight.selection.color=#FFFFFF
