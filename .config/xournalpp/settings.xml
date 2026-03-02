@@ -164,6 +164,10 @@
     </data>
   </data>
   <data name="deviceClasses">
+    <data name="GAOMON Gaomon Tablet_M10KPRO">
+      <attribute name="deviceClass" type="int" value="2"/>
+      <attribute name="deviceSource" type="int" value="1"/>
+    </data>
     <data name="HID 256c:006e">
       <attribute name="deviceClass" type="int" value="2"/>
       <attribute name="deviceSource" type="int" value="1"/>

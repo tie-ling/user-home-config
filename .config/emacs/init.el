@@ -199,32 +199,17 @@
 (use-package auctex
   :ensure t)
 
-(use-package ConTeXt-mode
+(use-package LaTeX-mode
   :mode ("\\.tex\\'")
-  :hook
-  ((ConTeXt-mode . turn-on-reftex)
-
-   ;; show \alpha as α and \mathbb{R} as ℝ
-   (ConTeXt-mode . prettify-symbols-mode)
-
-   ;; shortcuts for symbols
-   (ConTeXt-mode . LaTeX-math-mode))
 
   :custom
-  ;; AUCTeX defaults to mkii; change to iv for iv and lmtx
-  (ConTeXt-Mark-version "IV")
-
   ;; Enable electric left right brace
   (LaTeX-electric-left-right-brace t)
 
+  (TeX-engine 'luatex)
+
   ;; Do not unprettify symbol at point
   (prettify-symbols-unprettify-at-point nil)
-
-  ;; Let AUCTeX properly detect formula environment as math mode
-  (texmathp-tex-commands
-   '(("\\startformula" sw-on)
-     ("\\stopformula" sw-off)
-     ("\\m" arg-on)))
 
   ;; Set PDF viewer
   (TeX-view-program-selection '((output-pdf "Zathura")))
@@ -241,71 +226,15 @@
   (TeX-debug-warnings t)
 
   ;; Electric inline math, 
-  (TeX-electric-math '("\\m{" . "}"))
+  (TeX-electric-math '("\\(" . "\\)"))
 
   ;; Electric sub and superscript, inserts {} after ^ and _
   ;; such as a^{}.
   (TeX-electric-sub-and-superscript t)
 
-  ;; RefTex
-  (reftex-plug-into-AUCTeX t)
-
-  ;; Customize keyboard shortcuts for TeX math macros
-  (LaTeX-math-list
-   '(("o r" "mathbb{R}" nil nil)
-     ("o Q" "qquad" nil nil)
-     ("o o" "sim" nil nil)
-     ("o ," "smblksquare" nil nil)
-     ("o q" "quad" nil nil)
-     ("o b" LaTeX-math-bf nil nil)
-     ("o n" "mathbb{N}" nil nil)
-     (?= "coloneq" nil nil)
-     ("o c" "mathbb{C}" nil nil)))
-
-  :bind
-  ;; Electric \left(\right) \left[\right] \left\{\right\}
-  ;; only left brace; there is no right electric brace function
-  (:map ConTeXt-mode-map ("(" . LaTeX-insert-left-brace))
-  (:map ConTeXt-mode-map ("[" . LaTeX-insert-left-brace))
-  (:map ConTeXt-mode-map ("{" . LaTeX-insert-left-brace))
-
   :config
   (add-hook 'TeX-after-compilation-finished-functions
-            #'TeX-revert-document-buffer)
-
-  ;; in context mode, override auctex function for inserting mathcal
-  (defun LaTeX-math-cal (char dollar)
-      "Insert a {\\cal CHAR}.  If DOLLAR is non-nil, put $'s around it.
-If `TeX-electric-math' is non-nil wrap that symbols around the
-char."
-      (interactive "*c\nP")
-      (insert "\\mathcal{" (char-to-string char) "}"))
-
-
-  (defun LaTeX-math-bf (char dollar)
-      "Insert a {\\cal CHAR}.  If DOLLAR is non-nil, put $'s around it.
-If `TeX-electric-math' is non-nil wrap that symbols around the
-char."
-      (interactive "*c\nP")
-      (insert "\\mathbf{" (char-to-string char) "}"))
-
-  ;; Prettify symbols mode, customizable.
-  (with-eval-after-load "tex-mode"
-    (dolist (symb
-             '(("\\colon" . ?:)
-               ("\\msansS" . ?𝖲)
-               ("\\smblksquare" . ?▪)
-               ("\\mathbf{A}" . ?𝐀)
-               ("\\mathbf{B}" . ?𝐁)
-               ("\\mathbf{C}" . ?𝐂)
-               ("\\mathbf{D}" . ?𝐃)
-               ("\\mathbf{X}" . ?𝐗)
-               ("\\mathbf{Y}" . ?𝐘)
-               ("\\mathbf{p}" . ?𝐩)
-               ("\\mathbf{q}" . ?𝐪)
-               ("\\mathbb{C}" . ?ℂ)
-               ("\\mathbb{K}" . ?𝕂)))
-      (add-to-list 'tex--prettify-symbols-alist symb))))
+            #'TeX-revert-document-buffer))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
