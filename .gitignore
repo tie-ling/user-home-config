@@ -23,3 +23,4 @@ sys-conf
 .ssh/连接楼上服务器的密钥.key
 .pki
 user-termux-config
+/.android/
