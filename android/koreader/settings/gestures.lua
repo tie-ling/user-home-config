@@ -176,16 +176,14 @@ return {
         ["one_finger_swipe_right_edge_up"] = {
             ["increase_frontlight_warmth"] = 0,
         },
-        ["pinch_gesture"] = {},
-        ["short_diagonal_swipe"] = {
-            ["full_refresh"] = true,
-        },
-        ["spread_gesture"] = {},
         ["tap_left_bottom_corner"] = {
             ["toggle_frontlight"] = true,
         },
+        ["tap_right_bottom_corner"] = {
+            ["full_refresh"] = true,
+        },
         ["tap_top_left_corner"] = {
-            ["toggle_page_flipping"] = true,
+            ["show_timer"] = true,
         },
         ["tap_top_right_corner"] = {
             ["toggle_bookmark"] = true,
