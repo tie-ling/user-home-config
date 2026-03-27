@@ -31,7 +31,7 @@ return {
     ["copt_font_gamma"] = 36,
     ["copt_font_hinting"] = 1,
     ["copt_font_kerning"] = 3,
-    ["copt_font_size"] = 26,
+    ["copt_font_size"] = 28,
     ["copt_h_page_margins"] = {
         [1] = 15,
         [2] = 15,
