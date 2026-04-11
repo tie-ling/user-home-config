@@ -27,6 +27,11 @@ https://github.com/koreader/koreader/releases
 https://f-droid.org/repo/com.gacode.relaunchx_200106000.apk
 https://f-droid.org/repo/tw.com.daxia.virtualsoftkeys_10.apk
 
+https://f-droid.org/packages/tw.com.daxia.virtualsoftkeys/
+https://f-droid.org/de/packages/com.gacode.relaunchx/
+https://f-droid.org/de/packages/com.ghostsq.commander/
+https://github.com/koreader/koreader/releases
+
 find -type f -name '*apk' | xargs -I{} adb install {}
 
 * reboot, select new launcher as default
@@ -98,3 +103,12 @@ koreader/issues/13959
 inside root, /data/data/org.koreader.launcher/files/data/cr3.ini
 
 change to crengine.highlight.selection.color=#FFFFFF
+
+* guowen obook
+create all folders before copying files
+
+find -mindepth 1 -type d -print0 | xargs -0I{} mkdir ~/mtp/Internal\ shared\ storage/koreader/data/{}
+
+wait for a minute, obook does some init
+
+find -mindepth 1 -type f -print0 | xargs -0I{} cp {} ~/mtp/Internal\ shared\ storage/koreader/data/{}
