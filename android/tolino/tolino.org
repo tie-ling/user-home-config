@@ -112,3 +112,7 @@ find -mindepth 1 -type d -print0 | xargs -0I{} mkdir ~/mtp/Internal\ shared\ sto
 wait for a minute, obook does some init
 
 find -mindepth 1 -type f -print0 | xargs -0I{} cp {} ~/mtp/Internal\ shared\ storage/koreader/data/{}
+
+* squashed font and unaligned font
+Must use Font Hinting = auto. native font hinting leads to problems
+described in the title

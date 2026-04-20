@@ -200,17 +200,26 @@
 (use-package auctex
   :ensure t)
 
-(use-package LaTeX-mode
+(use-package ConTeXt-mode
   :mode ("\\.tex\\'")
+  :hook
+  ((ConTeXt-mode . turn-on-reftex))
 
   :custom
+  ;; AUCTeX defaults to mkii; change to iv for iv and lmtx
+  (ConTeXt-Mark-version "IV")
+
   ;; Enable electric left right brace
   (LaTeX-electric-left-right-brace t)
 
-  (TeX-engine 'luatex)
-
   ;; Do not unprettify symbol at point
   (prettify-symbols-unprettify-at-point nil)
+
+  ;; Let AUCTeX properly detect formula environment as math mode
+  (texmathp-tex-commands
+   '(("\\startformula" sw-on)
+     ("\\stopformula" sw-off)
+     ("\\m" arg-on)))
 
   ;; Set PDF viewer
   (TeX-view-program-selection '((output-pdf "Zathura")))
@@ -227,11 +236,21 @@
   (TeX-debug-warnings t)
 
   ;; Electric inline math, 
-  (TeX-electric-math '("\\(" . "\\)"))
+  (TeX-electric-math '("\\m{" . "}"))
 
   ;; Electric sub and superscript, inserts {} after ^ and _
   ;; such as a^{}.
   (TeX-electric-sub-and-superscript t)
+
+  ;; RefTex
+  (reftex-plug-into-AUCTeX t)
+
+  :bind
+  ;; Electric \left(\right) \left[\right] \left\{\right\}
+  ;; only left brace; there is no right electric brace function
+  (:map ConTeXt-mode-map ("(" . LaTeX-insert-left-brace))
+  (:map ConTeXt-mode-map ("[" . LaTeX-insert-left-brace))
+  (:map ConTeXt-mode-map ("{" . LaTeX-insert-left-brace))
 
   :config
   (add-hook 'TeX-after-compilation-finished-functions
