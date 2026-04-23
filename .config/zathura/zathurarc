@@ -25,7 +25,7 @@ map [fullscreen] <C-r>   search backward
 map [fullscreen] <C-s>   search forward
 map [fullscreen] <Down>   scroll down
 map [fullscreen] <Left>   scroll left
-map [fullscreen] <Return>   scroll full-down
+map [fullscreen] <Return>   navigate next
 map [fullscreen] <Right>   scroll right
 map [fullscreen] <Tab>   toggle_index
 map [fullscreen] <Up>   scroll up
