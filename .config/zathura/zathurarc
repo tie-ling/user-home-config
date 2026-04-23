@@ -27,7 +27,6 @@ map [fullscreen] <Down>   scroll down
 map [fullscreen] <Left>   scroll left
 map [fullscreen] <Return>   scroll full-down
 map [fullscreen] <Right>   scroll right
-map [fullscreen] <Space>   scroll full-down
 map [fullscreen] <Tab>   toggle_index
 map [fullscreen] <Up>   scroll up
 map [fullscreen] =   zoom in
@@ -36,6 +35,7 @@ map [fullscreen] F   follow
 map [fullscreen] \'   mark_evaluate
 map [fullscreen] \,   navigate next
 map [fullscreen] \.   navigate previous
+map [fullscreen] <Space>   navigate next
 map [fullscreen] a   scroll full-left
 map [fullscreen] b   scroll left
 map [fullscreen] d   toggle_page_mode
