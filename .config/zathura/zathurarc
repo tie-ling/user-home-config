@@ -18,7 +18,7 @@ map [fullscreen] +   zoom in
 map [fullscreen] -   zoom out
 map [fullscreen] <A-Space>   scroll full-up
 map [fullscreen] <A-s>   toggle_statusbar
-map [fullscreen] <BackSpace>   scroll full-up
+map [fullscreen] <BackSpace>   navigate previous
 map [fullscreen] <C-BackSpace>   navigate previous
 map [fullscreen] <C-Space>   navigate next
 map [fullscreen] <C-r>   search backward
