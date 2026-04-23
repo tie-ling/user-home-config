@@ -1,4 +1,4 @@
--- /storage/emulated/0/koreader/settings.reader.lua
+-- /storage/sdcard1/koreader/settings.reader.lua
 return {
     ["activate_menu"] = "swipe_tap",
     ["android_screen_timeout"] = 900000,
@@ -26,8 +26,8 @@ return {
     ["copt_block_rendering_mode"] = 2,
     ["copt_cjk_width_scaling"] = 100,
     ["copt_css"] = "./data/epub.css",
-    ["copt_embedded_css"] = 0,
-    ["copt_embedded_fonts"] = 1,
+    ["copt_embedded_css"] = 1,
+    ["copt_embedded_fonts"] = 0,
     ["copt_font_base_weight"] = 0,
     ["copt_font_gamma"] = 30,
     ["copt_font_hinting"] = 2,
@@ -298,4 +298,34 @@ return {
     ["screensaver_show_message"] = true,
     ["screensaver_stretch_images"] = false,
     ["screensaver_type"] = "disable",
-    ["scroll_meth
+    ["scroll_method"] = "classic",
+    ["show_filter"] = {},
+    ["start_with"] = "history",
+    ["statistics"] = {
+        ["calendar_browse_future_months"] = false,
+        ["calendar_nb_book_spans"] = 3,
+        ["calendar_show_histogram"] = true,
+        ["calendar_start_day_of_week"] = 2,
+        ["color"] = false,
+        ["convert_to_db"] = true,
+        ["freeze_finished_books"] = false,
+        ["is_enabled"] = true,
+        ["max_sec"] = 300,
+        ["min_sec"] = 45,
+    },
+    ["style_tweaks"] = {
+        ["font_size_most_reset"] = true,
+        ["footnote-inpage_epub"] = true,
+        ["inpage_footnote_font-size_smaller"] = true,
+        ["lineheight_all_inherit"] = true,
+        ["margin_body_0"] = true,
+        ["text_align_most_left"] = true,
+    },
+    ["style_tweaks_in_dispatcher"] = {},
+    ["text_lang_fallback"] = "en-US",
+    ["toc_items_per_page"] = 14,
+    ["vocabulary_builder"] = {
+        ["enabled"] = false,
+        ["with_context"] = true,
+    },
+}
