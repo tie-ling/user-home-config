@@ -1,4 +1,0 @@
-# Unison preferences
-root = /home/yc/Documents
-root = ssh://bt-yc/documents
-sshargs = -C

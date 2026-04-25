@@ -2,7 +2,8 @@
 #
 # Default wallpaper (more resolutions are available in /run/current-system/sw/share/backgrounds/sway/)
 output * bg /run/current-system/sw/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-output eDP-1 scale 2
+# for 1920x1080, scale to 1.5 is 1280x720
+output eDP-1 scale 1.5
 output DP-1 scale 2
 
 #

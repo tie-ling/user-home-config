@@ -1,3 +1,0 @@
-#!/bin/sh
-exec 2>&1
-exec dictd -d nodetach -c /data/data/com.termux/files/home/.config/dictd.conf
