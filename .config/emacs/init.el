@@ -120,9 +120,15 @@
   ((dictionary-mode . variable-pitch-mode)
    (dictionary-mode . visual-line-mode)))
 
+(use-package visual-line-mode
+  :hook
+  ((visual-line-mode . visual-fill-mode)
+   (visual-fill-mode . adaptive-wrap-prefix-mode)))
+
 (use-package text-mode
   :hook
-  ((text-mode . variable-pitch-mode))
+  ((text-mode . variable-pitch-mode)
+   (text-mode . visual-line-mode))
   :bind
   (("C-c d" . yc-dictionary-lookup-definition)
    ("<f6>" . yc-dictionary-lookup-definition)))
