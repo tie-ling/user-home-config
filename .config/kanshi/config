@@ -1,4 +1,4 @@
-profile {
+profile athome {
      output eDP-1 disable
      output "IPS, Inc. (Intellectual Property Solutions, Inc.) SO2380 Unknown" {
           mode 1280x720
@@ -6,6 +6,6 @@ profile {
      }
 }
 
-profile {
-    output eDP-1 mode --custom 1280x720@60Hz
+profile standalone {
+    output eDP-1 mode --custom 1280x720@60Hz enable
 }
