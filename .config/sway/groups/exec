@@ -9,7 +9,7 @@ exec dconf load / < $HOME/.config/yc-dconf
 
 exec wl-gammarelay-rs
 
-
+exec kanshi
 
 # or else emacs wl-paste will not work
 exec systemctl --user restart emacs
