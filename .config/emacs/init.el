@@ -40,7 +40,8 @@
   (("C-c i c" . set-input-method-chinese)
    ("C-c i g" . set-input-method-german)
    ("C-c i t" . set-input-method-TeX)
-   ("M-o" . other-window))
+   ("M-o" . other-window)
+   ("C-c v" . visual-line-mode))
   :custom
   (auto-fill-function 'do-auto-fill t)
   (calendar-week-start-day 1)
