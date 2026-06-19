@@ -1,3 +1,0 @@
-ENTRY "bt-yc" URL "/sftp://bt-yc/home/yc"
-ENTRY "bt-our" URL "/sftp://bt-our/home/our"
-ENTRY "phone" URL "/sftp://phone/data/data/com.termux/files/home"

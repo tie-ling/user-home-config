@@ -1,2 +1,0 @@
-include groups/default
-include systems/$(hostname)

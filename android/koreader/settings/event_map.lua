@@ -1,1 +1,0 @@
-return { [21] = "LPgBack", [22] = "LPgFwd", }

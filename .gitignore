@@ -1,7 +1,8 @@
 *~
+.emacs.d
 .bash_history
 .cache
-.config
+
 .gnupg
 .lesshst
 .local
